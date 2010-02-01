@@ -1,0 +1,46 @@
+c Grafo creado por el generador de grafos aleatorios
+c en formato del desafío DIMACS de Fernando Torre.
+c Grafo generado con densidad 0.100000
+
+p edge 12 4
+
+n    1  3
+n    2 97
+n    3 49
+n    4 -30
+n    5 -65
+n    6 31
+n    7 -1
+n    8 -86
+n    9 39
+n   10  0
+n   11 -69
+n   12 89
+
+c Aristas que parten del vértice    1
+e    1    6
+
+c Aristas que parten del vértice    2
+
+c Aristas que parten del vértice    3
+e    3    9
+
+c Aristas que parten del vértice    4
+
+c Aristas que parten del vértice    5
+
+c Aristas que parten del vértice    6
+e    6   10
+
+c Aristas que parten del vértice    7
+e    7    7
+
+c Aristas que parten del vértice    8
+
+c Aristas que parten del vértice    9
+
+c Aristas que parten del vértice   10
+
+c Aristas que parten del vértice   11
+
+c Aristas que parten del vértice   12

@@ -1,0 +1,131 @@
+c Grafo creado por el generador de grafos aleatorios
+c en formato del desafío DIMACS de Fernando Torre.
+c Grafo generado con densidad 0.300000
+
+p edge 20 65
+
+n    1 -98
+n    2 12
+n    3 -60
+n    4 61
+n    5 16
+n    6 -3
+n    7 -29
+n    8 78
+n    9 63
+n   10 48
+n   11 -64
+n   12 71
+n   13 41
+n   14  2
+n   15 -38
+n   16 -96
+n   17 -80
+n   18 -26
+n   19 -69
+n   20 -66
+
+c Aristas que parten del vértice    1
+e    1    3
+e    1    4
+e    1    5
+e    1   11
+e    1   15
+
+c Aristas que parten del vértice    2
+e    2    7
+e    2    9
+e    2   11
+e    2   18
+e    2   19
+
+c Aristas que parten del vértice    3
+e    3    3
+e    3    5
+e    3    7
+e    3    8
+e    3   10
+e    3   11
+e    3   17
+
+c Aristas que parten del vértice    4
+e    4    6
+e    4   13
+e    4   14
+
+c Aristas que parten del vértice    5
+e    5    5
+e    5    8
+e    5   11
+e    5   13
+e    5   18
+
+c Aristas que parten del vértice    6
+e    6    6
+e    6   10
+e    6   11
+e    6   14
+e    6   18
+
+c Aristas que parten del vértice    7
+e    7   10
+e    7   13
+e    7   17
+
+c Aristas que parten del vértice    8
+e    8   14
+e    8   16
+e    8   19
+
+c Aristas que parten del vértice    9
+e    9   13
+e    9   16
+e    9   18
+
+c Aristas que parten del vértice   10
+e   10   11
+e   10   13
+e   10   14
+e   10   18
+e   10   20
+
+c Aristas que parten del vértice   11
+e   11   16
+e   11   17
+e   11   18
+e   11   19
+
+c Aristas que parten del vértice   12
+e   12   13
+e   12   14
+e   12   16
+e   12   17
+
+c Aristas que parten del vértice   13
+e   13   14
+e   13   16
+e   13   18
+e   13   20
+
+c Aristas que parten del vértice   14
+e   14   17
+
+c Aristas que parten del vértice   15
+e   15   16
+e   15   18
+
+c Aristas que parten del vértice   16
+e   16   17
+e   16   19
+
+c Aristas que parten del vértice   17
+e   17   18
+e   17   20
+
+c Aristas que parten del vértice   18
+e   18   18
+
+c Aristas que parten del vértice   19
+e   19   19
+
+c Aristas que parten del vértice   20
