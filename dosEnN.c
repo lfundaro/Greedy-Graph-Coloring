@@ -17,30 +17,25 @@
 */
 #include <stdio.h>
 
-int* next_perm(int array[],int N){
-  register int ii = N-1;
-  register int jj = N;
-  register int aux = 0;
+int* twoOnN(int array[],next_swap[],int N){
+  int head = next_swap[0];
+  int tail = next_swap[1];
+  int* pair = (int*)malloc(2 * sizeof (int));
+  int aux;
 
-  while (array[ii-1] >= array[ii])
-    ii = ii-1;
+  pair[0]=array[head];
+  pair[1]=array[head+1];
 
-  while (array[jj-1] <= array[ii-1])
-    jj = jj-1;
+  if (tail<N){
+    aux = array[head+1];
+    array[head+1] = array[tail];
+    array[tail] = aux;
 
-  aux = array[ii-1];
-  array[ii-1] = array[jj-1];
-  array[jj-1] = aux;
-
-  ii = ii+1;
-  jj = N;
-
-  while (ii<jj){
-    aux = array[ii-1];
-    array[ii-1] = array[jj-1];
-    array[jj-1] = aux;
-    ii = ii+1;
-    jj = jj-1;
+    next_swap[1] = next_swap[1]+1;
+  }
+  else{
+    next_swap[0]=next_swap[0]+1;
+    next_swap[1]=next_swap[0]+3;
   }
   
   return array;
@@ -60,7 +55,7 @@ int main(){
 	printf("\n");
 	printf("---------------\n");
   */
-  for(j=1;j<200000000;++j){    
+  for(j=1;j<15;++j){    
     // next_perm(array,N);
     //De aqui en adelante, la implementacion "inline"
     register int ii = N-1;
