@@ -17,3 +17,5 @@ twoOnN:
 
 clean:
 	rm -rf *.o *.out semantic.cache *.gch  main dijkstra twoOnN
+
+# comentario useless
