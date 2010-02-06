@@ -23,20 +23,20 @@ int main(void)
   char * dump = malloc(sizeof(char)*12);
   int d1;  
   int d2;
+  int vertex_num;
   // Comienza lectura de la entrada estandar
   while ((read = getline(&line, &len, stdin)) != -1) {
     if (regexec(compiled_num, line, 0, NULL, 0) == 0) {
-      sscanf(line,"%c %s %d %d", dump, dump,&d1,&d2);
+      sscanf(line,"%c %s %d %d", dump, dump,&vertex_num,&d2);
       break;
-      // ahora d1 contiene numero de vertices en grafo
+      // ahora vertex_num contiene numero de vertices en grafo
     }
   }
   // Inicializacion de arreglo de adyacencias
-  adj_matrix main_col[d1];
+  linked_list main_col[vertex_num];
   int i;
   for (i = 0; i<d1 ; i++) {
-    main_col[i].vertex = 0;  // Cero indica ausencia de vertice
-    main_col[i].pt = NULL;
+    main_col[i].next = NULL;
   }
   
   // Lectura del resto del archivo
@@ -45,12 +45,12 @@ int main(void)
       sscanf(line,"%c %d %d", dump,&d1,&d2);
       d1 -= 1;
       d2 -= 1;
-      main_col[d1].vertex = d1; // Uno indica presencia de vertice d1
+      main_col[d1].vertex = d1; //
       linked_list * adjacents = malloc(sizeof(linked_list)); 
       adjacents->vertex = d2;
       // Insercion de elementos de lista por la izquierda
-      adjacents->next = main_col[d1].pt;
-      main_col[d1].pt = (struct linked_list *) adjacents;
+      adjacents->next = main_col[d1].next;
+      main_col[d1].next = (struct linked_list *) adjacents;
     }
   }
   free(dump);
