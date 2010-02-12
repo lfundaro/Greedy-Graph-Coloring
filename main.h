@@ -38,11 +38,11 @@ typedef struct tuple {
   int degree;
 }tuple;
 
-typedef struct satur_list {
-  int vertex;
-  int degree;
-  struct satur_list * next;
-} satur_list;
+/* typedef struct satur_list { */
+/*   int vertex; */
+/*   int degree; */
+/*   struct satur_list * next; */
+/* } satur_list; */
 
 
 void degree(struct row_vertex *, int, struct tuple *);
@@ -52,3 +52,5 @@ int compare(const void *, const void *);
 int dsatur(struct row_vertex *, struct tuple *, int);
 
 int get_max_degree(struct tuple *);
+
+void update_satur(struct row_vertex *, int *, int, int);
