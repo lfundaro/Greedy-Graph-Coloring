@@ -24,9 +24,15 @@ int main(void)
   // Inicializacion de arreglo de adyacencias
   row_vertex main_col[vertex_num];
   int i;
-  for (i = 0; i<vertex_num ; i++) {
+  for (i = 0; i < vertex_num ; i++) {
     main_col[i].pt = NULL;
     main_col[i].vertex = i; 
+    main_col[i].color = -1; // Color inicial
+    main_col[i].color_around[vertex_num]; 
+    int j;
+    for(j = 0; j < vertex_num; j++) 
+      // Inicialización de arreglo de colores adyacentes
+      main_col[i].color_around[j] = 0;
   }
   
   // Lectura del resto del archivo
