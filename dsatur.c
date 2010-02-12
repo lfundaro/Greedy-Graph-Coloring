@@ -6,5 +6,7 @@ int dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num) {
   size_t nmemb = vertex_num; // Número de elementos
   size_t size = sizeof deg_vert[0]; // Tamaño de un elemento
   qsort(base, nmemb, size, compare);
+  
+
   return 0;
 }

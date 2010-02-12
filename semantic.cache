@@ -4,16 +4,23 @@
   :tables (list 
    (semanticdb-table "main.c"
     :major-mode 'c-mode
-    :tags '(("main" function (:arguments (("" variable (:type "void") (reparse-symbol arg-sub-list) [48 53])) :type "int") nil [39 101]))
+    :tags '(("main.h" include nil nil [1 19]) ("main" function (:arguments (("" variable (:type "void") (reparse-symbol arg-sub-list) [30 35])) :type "int") nil [21 2393]))
     :file "main.c"
-    :pointmax 102
+    :pointmax 3211
     :unmatched-syntax 'nil
     )
-   (semanticdb-table "Makefile"
-    :major-mode 'makefile-gmake-mode
-    :tags '(("all" function (:arguments ("main")) nil [1 12]) ("main" function (:arguments ("main.o")) nil [12 46]) ("main.o" function (:arguments ("main.c")) nil [46 78]) ("clean" function nil nil [78 101]))
-    :file "Makefile"
-    :pointmax 101
+   (semanticdb-table "dsatur.c"
+    :major-mode 'c-mode
+    :tags '(("main.h" include nil nil [1 18]) ("dsatur" function (:arguments (("main_col" variable (:dereference 1 :type ("row_vertex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31 53]) ("deg_vert" variable (:dereference 1 :type ("tuple" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54 71]) ("vertex_num" variable (:type "int") (reparse-symbol arg-sub-list) [72 87])) :type "int") nil [20 372]))
+    :file "dsatur.c"
+    :pointmax 373
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "main.h"
+    :major-mode 'c-mode
+    :tags '(("stdio.h" include (:system-flag t) (dependency-file "/usr/include/stdio.h") [51 70]) ("stdlib.h" include (:system-flag t) (dependency-file "/usr/include/stdlib.h") [71 91]) ("unistd.h" include (:system-flag t) (dependency-file "/usr/include/unistd.h") [92 112]) ("sys/types.h" include (:system-flag t) (dependency-file "/usr/include/sys/types.h") [113 136]) ("sys/stat.h" include (:system-flag t) (dependency-file "/usr/include/sys/stat.h") [137 159]) ("fcntl.h" include (:system-flag t) (dependency-file "/usr/include/fcntl.h") [160 179]) ("regex.h" include (:system-flag t) (dependency-file "/usr/include/regex.h") [180 199]) ("string.h" include (:system-flag t) (dependency-file "/usr/include/string.h") [200 220]) ("stddef.h" include (:system-flag t) (dependency-file none) [221 240]) ("linked_list" type (:typedef ("linked_list" type (:members (("vertex" variable (:type "int") (reparse-symbol classsubparts) [528 539]) ("next" variable (:pointer 1 :type ("linked_list" type (:prototype t :type "struct") nil nil)) (reparse-symbol classsubparts) [542 568])) :type "struct") nil nil) :superclasses "linked_list" :type "typedef") nil [497 583]) ("row_vertex" type (:typedef ("row_vertex" type (:members (("vertex" variable (:type "int") (reparse-symbol classsubparts) [615 626]) ("pt" variable (:pointer 1 :type ("linked_list" type (:prototype t :type "struct") nil nil)) (reparse-symbol classsubparts) [629 653])) :type "struct") nil nil) :superclasses "row_vertex" :type "typedef") nil [585 667]) ("tuple" type (:typedef ("tuple" type (:members (("vertex" variable (:type "int") (reparse-symbol classsubparts) [947 958]) ("degree" variable (:type "int") (reparse-symbol classsubparts) [961 972])) :type "struct") nil nil) :superclasses "tuple" :type "typedef") nil [922 980]) ("degree" function (:prototype-flag t :arguments (("" variable (:pointer 1 :type ("row_vertex" type (:prototype t :type "struct") nil nil)) (reparse-symbol arg-sub-list) [994 1014]) ("" variable (:type "int") (reparse-symbol arg-sub-list) [1015 1019]) ("" variable (:pointer 1 :type ("tuple" type (:prototype t :type "struct") nil nil)) (reparse-symbol arg-sub-list) [1020 1035])) :type "void") nil [982 1036]) ("compare" function (:prototype-flag t :arguments (("" variable (:pointer 1 :constant-flag t :type "void") (reparse-symbol arg-sub-list) [1050 1063]) ("" variable (:pointer 1 :constant-flag t :type "void") (reparse-symbol arg-sub-list) [1064 1077])) :type "int") nil [1038 1078]) ("dsatur" function (:prototype-flag t :arguments (("" variable (:pointer 1 :type ("row_vertex" type (:prototype t :type "struct") nil nil)) (reparse-symbol arg-sub-list) [1091 1111]) ("" variable (:pointer 1 :type ("tuple" type (:prototype t :type "struct") nil nil)) (reparse-symbol arg-sub-list) [1112 1127]) ("" variable (:type "int") (reparse-symbol arg-sub-list) [1128 1132])) :type "int") nil [1080 1133]))
+    :file "main.h"
+    :pointmax 1134
     )
    )
   :file "semantic.cache"

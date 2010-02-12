@@ -1,2 +1,34 @@
 - Liberar todos los apuntadores de la linked_list en adj_matrix
 - Quitar los flags de debugging al terminar todo
+
+
+Discusión de implementación:
+
+Intercambio:
+        - Hacer BFS/DFS iterativo para identificar componentes.
+        - Se contruye el conjunto vectorial.Quedamos en tener una matriz nxn 
+          (n es el peor de casos para número de componentes), donde se guardan 
+          las adyacencias de cada componente (conjunto vectorial).
+        - Saber cuáles componentes intercambiar: chequear si el vértice Vi está conectado 
+          a sólo uno de los colores en cada componente. (De lo contrario no se puede hacer 
+          intercambio).
+       - Chequear si un vértice pertenece a una componente dada.
+       - Luego de elegir las componentes que queremos intercambiar, se hace el intercambio
+         y eso implica actualizar grados de saturación SOLO a nodos no coloreados que son adyacentes  
+         a algún vértice de una componente conexa. Éste chequo hay que hacerlo para todas las componentes.
+      
+DSATUR:
+        - Siempre debo preguntar a mis adyacentes si están coloreados.
+        - Se tiene una variable (puede ser global) que guarda el color más nuevo usado hasta el momento. 
+        - A la matriz de adyacencia se le agrega un atributo color, que inicialmente está en -1.
+        - Se mantiene una lista enlazada de grados de saturación, cada lista tiene un elemento (vértice,grado).
+          Cuando el grado está en -1 es porque ya se colorió el vértice y no nos interesa actualizar.
+       -  Cada vértice del grafo tiene un arreglo de tamaño n asociado donde se pone un uno 
+          en la i-ésima casilla para indicar que dicho vértice tiene un vecino con el color i. Cada vez que 
+          quiero actualizar esta estructura verifico lo siguiente: Si el número es cero, lo pongo en uno y aumento
+          el grado de saturación, de lo contrario lo dejo intacto.
+       -  Para colorear un vértice v_i, el menor color posible se saca a partir del arreglo de colores asociado 
+          a dicho vértice.
+ 
+          
+        
