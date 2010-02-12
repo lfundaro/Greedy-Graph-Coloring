@@ -9,7 +9,7 @@
 # include <fcntl.h>
 # include <regex.h>
 # include <string.h>
-#include <stddef.h>
+# include <stddef.h>
 
 /************************************************/
 /* Tipo lista enlazada que contiene un entero   */
