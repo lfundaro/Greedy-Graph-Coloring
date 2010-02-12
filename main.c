@@ -1,15 +1,4 @@
-#ifndef _GNU_SOURCE
-#define _GNU_SOURCE
-#endif
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <regex.h>
-#include <string.h>
-#include "main.h"
+# include "main.h"
 
 int main(void)
 {
@@ -33,10 +22,11 @@ int main(void)
     }
   }
   // Inicializacion de arreglo de adyacencias
-  linked_list main_col[vertex_num];
+  row_vertex main_col[vertex_num];
   int i;
-  for (i = 0; i<d1 ; i++) {
-    main_col[i].next = NULL;
+  for (i = 0; i<vertex_num ; i++) {
+    main_col[i].pt = NULL;
+    main_col[i].vertex = i; 
   }
   
   // Lectura del resto del archivo
@@ -45,17 +35,63 @@ int main(void)
       sscanf(line,"%c %d %d", dump,&d1,&d2);
       d1 -= 1;
       d2 -= 1;
-      main_col[d1].vertex = d1; //
-      linked_list * adjacents = malloc(sizeof(linked_list)); 
-      adjacents->vertex = d2;
-      // Insercion de elementos de lista por la izquierda
-      adjacents->next = main_col[d1].next;
-      main_col[d1].next = (struct linked_list *) adjacents;
+      if (d1 != d2) {
+        // Arco d1 --> d2
+        linked_list * adjacent1 = malloc(sizeof(linked_list)); 
+        adjacent1->vertex = d2;
+        // Insercion de elementos de lista por la izquierda
+        adjacent1->next = main_col[d1].pt;
+        main_col[d1].pt = (struct linked_list *) adjacent1;
+        // Arco d2 --> d1
+        linked_list * adjacent2 = malloc(sizeof(linked_list)); 
+        adjacent2->vertex = d1;
+        // Insercion de elementos de lista por la izquierda
+        adjacent2->next = main_col[d2].pt;
+        main_col[d2].pt = (struct linked_list *) adjacent2;
+      }
+      else {
+        linked_list * adjacents = malloc(sizeof(linked_list)); 
+        adjacents->vertex = d2;
+        // Insercion de elementos de lista por la izquierda
+        adjacents->next = main_col[d1].pt;
+        main_col[d1].pt = (struct linked_list *) adjacents;
+      }
     }
   }
+  tuple * deg_vert = (tuple *) malloc(sizeof(tuple)*vertex_num);
+  //  printf("aqui %d \n", sizeof deg_vert);
+  degree(main_col, vertex_num, deg_vert);
+  dsatur(main_col, deg_vert, vertex_num);
   free(dump);
   free(compiled_num);
   free(compiled_edge);
   free(line);
   return EXIT_SUCCESS;
 }
+
+
+/*****************************************/
+/* EL CEMENTERIO DE LOS CÓDIGOS          */
+/* RESPETE A LOS MUERTOS, NO LOS BORRE ! */
+/*****************************************/
+
+  /* for(i = 0; i < vertex_num; i++) { */
+  /*   printf("adyacente a %d \n", main_col[i].vertex); */
+  /*   row_vertex * aux =(row_vertex *)  main_col[i].pt; */
+  /*   while (aux != NULL) { */
+  /*     printf("%d \n",aux->vertex); */
+  /*     aux = (row_vertex *) aux->pt; */
+  /*   } */
+  /* } */
+
+  /* int i; */
+  /* for(i = 0; i < nmemb; i++) { */
+  /*   printf("Vertice - Grado \n"); */
+  /*   printf("%d %d \n", deg_vert[i].vertex,deg_vert[i].degree); */
+  /* } */
+
+
+  /* for(i = 0; i < vertex_num; i++) { */
+  /*   printf("vertice - grado \n"); */
+  /*   printf("%d %d \n", deg_vert[i].vertex, deg_vert[i].degree); */
+  /* }     */

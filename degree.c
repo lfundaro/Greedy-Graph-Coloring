@@ -1,17 +1,15 @@
-#include <stddef.h>
-#include "main.h"
-
+# include "main.h"
 
 /* Funcion que dado un arreglo de lista de adyacencias */
 /* y el número de vértices del grafo, retorna un arreglo */
 /* de tuplas vértice-grado */
 
-tuple * degree(linked_list main_col[], int vertex_num, tuple deg_vert[]) {
+void degree(row_vertex main_col[], int vertex_num, tuple deg_vert[]) {
   int i;
   int count = 0;
   linked_list * aux;
   for(i = 0; i < vertex_num; i++) {
-    aux = (linked_list *) main_col[i].next; // Apunta al primer adyacente
+    aux = (linked_list *) main_col[i].pt; // Apunta al primer adyacente
       while (aux != NULL) {
         count++;
         aux = (linked_list *) aux->next;
@@ -21,7 +19,7 @@ tuple * degree(linked_list main_col[], int vertex_num, tuple deg_vert[]) {
       deg_vert[i] = new_tuple;
       count = 0;
   }
-  return deg_vert;
+
 }
 
 /* Funcion que compara dos elementos tuple segun los  */
