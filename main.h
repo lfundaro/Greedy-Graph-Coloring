@@ -21,6 +21,11 @@ typedef struct linked_list {
   struct linked_list * next;
 } linked_list;
 
+typedef struct linked_array_list {
+  int* array;
+  struct linked_array_list * next;
+} linked_array_list;
+
 typedef struct row_vertex {
   int vertex;
   int color;
@@ -55,7 +60,11 @@ int get_max_degree(struct tuple *);
 
 int length(struct linked_list*);
 
-row_vertex* interchange(struct row_vertex [], int, int);
+void dfs(int,int*,row_vertex [],int*);
+
+void initialize(int*,int);
+
+row_vertex* interchange(struct row_vertex [], int, int, int);
 
 void update_satur(struct row_vertex *, int *, int, int);
 
