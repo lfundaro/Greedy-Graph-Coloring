@@ -56,7 +56,7 @@ int compare(const void *, const void *);
 
 int dsatur(struct row_vertex *, struct tuple *, int);
 
-int get_max_degree(struct tuple *);
+int get_max_degree(struct tuple *, struct row_vertex *,int vertex_num);
 
 int length(struct linked_list*);
 
@@ -68,3 +68,6 @@ row_vertex* interchange(struct row_vertex [], int, int, int);
 
 void update_satur(struct row_vertex *, int *, int, int);
 
+int repeated(int, int *, int);
+
+int leastp_color(struct row_vertex *,int, int);

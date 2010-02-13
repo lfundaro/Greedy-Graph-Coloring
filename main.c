@@ -71,6 +71,8 @@ int main(void)
   interchange(main_col, 0, 3,vertex_num);*/
   degree(main_col, vertex_num, deg_vert);
   dsatur(main_col, deg_vert, vertex_num);
+  for(i = 0; i < vertex_num; i++) 
+    printf("vertice %d --> color %d \n",i+1, main_col[i].color);
   free(dump);
   free(compiled_num);
   free(compiled_edge);
@@ -104,3 +106,12 @@ int main(void)
   /*   printf("vertice - grado \n"); */
   /*   printf("%d %d \n", deg_vert[i].vertex, deg_vert[i].degree); */
   /* }     */
+
+ /* int kk; */
+  /* for(i = 0; i < vertex_num ; i++) { */
+  /*   printf("vertice %d, tiene color %d \n", main_col[i].vertex, main_col[i].color); */
+  /*   for(kk=0; kk<vertex_num;kk++)  */
+  /*     printf("Color %d, %d \n",kk, main_col[i].color_around[i]); */
+  /*   printf("--------------\n"); */
+  /* } */
+ 
