@@ -25,7 +25,7 @@ typedef struct row_vertex {
   int vertex;
   int color;
   struct linked_list * pt;
-  int color_around[];  // Arreglo de colores adyacentes
+  int * color_around;  // Arreglo de colores adyacentes
 } row_vertex;
 
 /************************************************************/
@@ -38,11 +38,11 @@ typedef struct tuple {
   int degree;
 }tuple;
 
-typedef struct satur_list {
-  int vertex;
-  int degree;
-  struct satur_list * next;
-} satur_list;
+/* typedef struct satur_list { */
+/*   int vertex; */
+/*   int degree; */
+/*   struct satur_list * next; */
+/* } satur_list; */
 
 
 void degree(struct row_vertex *, int, struct tuple *);
@@ -56,3 +56,6 @@ int get_max_degree(struct tuple *);
 int length(struct linked_list*);
 
 row_vertex* interchange(struct row_vertex [], int, int);
+
+void update_satur(struct row_vertex *, int *, int, int);
+
