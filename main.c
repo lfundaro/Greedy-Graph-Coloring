@@ -65,7 +65,6 @@ int main(void)
     }
   }
   tuple * deg_vert = (tuple *) malloc(sizeof(tuple)*vertex_num);
-  //  printf("aqui %d \n", sizeof deg_vert);
   degree(main_col, vertex_num, deg_vert);
   dsatur(main_col, deg_vert, vertex_num);
   free(dump);

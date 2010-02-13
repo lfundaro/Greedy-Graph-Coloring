@@ -12,6 +12,8 @@ def combinations(arr,head,tail):
     else:
         print arr,arr[head],arr[head+1]
 
+System.out.println(set.get(4,6));
+print set.get(4,6)
 
 wheredowegonow=[0,2]
 arr=[1,2,3,4,5,6]
