@@ -12,14 +12,13 @@ void degree(row_vertex main_col[], int vertex_num, tuple deg_vert[]) {
     aux = (linked_list *) main_col[i].pt; // Apunta al primer adyacente
       while (aux != NULL) {
         count++;
-        aux = (linked_list *) aux->next;
+        aux = aux->next;
       }
       // Se asigna una tuple vertice-grado al arreglo deg_vert
       tuple new_tuple = { i, count };
       deg_vert[i] = new_tuple;
       count = 0;
   }
-
 }
 
 /* Funcion que compara dos elementos tuple segun los  */

@@ -28,7 +28,7 @@ int dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num) {
   update_satur(main_col, satur_degree, v_i, last_color);
   // Pasos 3, 4, 5 de DSATUR, agregando intercambio
   while (num_colored <= vertex_num) {
-    //Choose a vertex.with..max.....blablabla....
+    num_colored++; //Choose a vertex.with..max.....blablabla....
   }
   return 0;
 }
@@ -38,13 +38,16 @@ void update_satur(struct row_vertex * main_col, int * satur_degree, int v_i, int
   // Buscar los adyacentes a v_i
   linked_list * forward = main_col[v_i].pt;
   while (forward != NULL) {
-    // Quiero saber si el vértice adyacente a v_i tiene en su 
-    // arreglo de colores adyacentes el color "color".
-    if (main_col[forward->vertex].color_around[color] == 0) {
-      main_col[forward->vertex].color_around[color] = 1;
-      satur_degree[forward->vertex] += 1;
+    //No interesan los bucles
+    if (v_i != main_col[forward->vertex].vertex) { 
+      // Quiero saber si el vértice adyacente a v_i tiene en su 
+      // arreglo de colores adyacentes el color "color".
+      if (main_col[forward->vertex].color_around[color] == 0) {
+        main_col[forward->vertex].color_around[color] = 1;
+        satur_degree[forward->vertex] += 1;
+      }
     }
-    forward = forward->next;
+    forward = forward->next;  
   }
 } 
 

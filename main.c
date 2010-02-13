@@ -28,7 +28,7 @@ int main(void)
     main_col[i].pt = NULL;
     main_col[i].vertex = i; 
     main_col[i].color = -1; // Color inicial
-    main_col[i].color_around[vertex_num]; 
+    main_col[i].color_around = malloc(sizeof(int)*vertex_num); 
     int j;
     for(j = 0; j < vertex_num; j++) 
       // Inicialización de arreglo de colores adyacentes

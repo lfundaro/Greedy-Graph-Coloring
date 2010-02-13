@@ -25,7 +25,7 @@ typedef struct row_vertex {
   int vertex;         
   int color;           
   struct linked_list * pt;
-  int color_around[];  // Arreglo de colores adyacentes
+  int * color_around;  // Arreglo de colores adyacentes
 } row_vertex;
 
 /************************************************************/
