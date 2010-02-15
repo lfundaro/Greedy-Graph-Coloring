@@ -11,6 +11,7 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
   int used_colors[vertex_num]; 
   int upper_bound = 0; //Coloración lograda 
   int lower_bound = 0; //Clique máxima encontrada
+  int highest_color = 0;
   int i; 
 
   for(i = 0; i < vertex_num; i++) 
@@ -53,11 +54,27 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
     if (repeated(max, satur_degree, vertex_num)) {
       v_i = get_max_degree(base,main_col,vertex_num);
       last_color = leastp_color(main_col, v_i, vertex_num);
+      if (last_color > highest_color)
+        highest_color = last_color;
+      if (used_colors[last_color] == 0) {
+        if (highest_color > 0 && num_colored > 2) {
+          interchange(main_col, satur_degree, v_i, highest_color, vertex_num);
+            last_color = leastp_color(main_col, v_i, vertex_num);
+        }
+      }
       main_col[v_i].color = last_color;
     }
     else {
       v_i = found;
       last_color = leastp_color(main_col, v_i, vertex_num);
+      if (last_color > highest_color)
+        highest_color = last_color;
+      if (used_colors[last_color] == 0) {
+        if (highest_color > 0 && num_colored > 2) {
+          interchange(main_col, satur_degree, v_i, highest_color, vertex_num);
+            last_color = leastp_color(main_col, v_i, vertex_num);
+        }
+      }
       main_col[v_i].color = last_color;
     }
 

@@ -76,7 +76,7 @@ void dfs(int,int*,row_vertex [],int*);
 
 void initialize(int*,int);
 
-row_vertex* interchange(struct row_vertex [], int, int, int);
+row_vertex* interchange(struct row_vertex [],int *, int, int, int);
 
 void update_satur(struct row_vertex *, int *, int, int);
 

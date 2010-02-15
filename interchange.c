@@ -112,7 +112,7 @@ void interch(int min,int max,int vertex,linked_array_list* components,row_vertex
 	  }
 	i++;
       }
-    i=0
+    i=0;
     aux=aux->next;
   }
 }
