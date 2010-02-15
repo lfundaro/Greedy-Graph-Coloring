@@ -22,7 +22,6 @@ int* twoOnN(int array[],int next_swap[],int N){
   //Esta guarda es para cuando
   //genero la ultima combinacion
   if (head == N-1){
-    free(pair);
     pair = NULL;
     return pair;
   }

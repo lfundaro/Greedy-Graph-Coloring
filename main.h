@@ -23,6 +23,7 @@ typedef struct linked_list {
 
 typedef struct linked_array_list {
   int* array;
+  int color;
   struct linked_array_list * next;
 } linked_array_list;
 
