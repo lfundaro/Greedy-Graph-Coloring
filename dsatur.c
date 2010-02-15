@@ -110,7 +110,7 @@ void update_satur(struct row_vertex * main_col, int * satur_degree, int v_i, int
         // Quiero saber si el vértice adyacente a v_i tiene en su 
         // arreglo de colores adyacentes el color "color".
         if (main_col[forward->vertex].color_around[color] == 0) {
-          main_col[forward->vertex].color_around[color] = 1;
+          main_col[forward->vertex].color_around[color]++;
           satur_degree[forward->vertex] += 1;
         }
       }

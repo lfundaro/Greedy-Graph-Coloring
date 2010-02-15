@@ -82,17 +82,21 @@ int main(void)
   int k;
   int j;
   for(i = 0; i < vertex_num; i++) {
-    for (j = 0; j < vertex_num ; j++) {
-      main_col[j].color = -1; // Color inicial
-      for(k = 0; k < vertex_num; k++) 
-        main_col[j].color_around[k] = 0;
-    }
+    main_col_init(main_col, vertex_num);
     result = dsatur(main_col, deg_vert, vertex_num, i);
-   if (result.clique > lower_bound)
+    if (result.clique > lower_bound)
       lower_bound = result.clique;
   }
   printf("Cota superior = %d \n", upper_bound);
   printf("Cota inferior = %d \n", lower_bound);
+  /* int * vertices = malloc(sizeof(int) * vertex_num); */
+  /* for(i = 0; i < vertex_num; i++)  */
+  /*   vertices[i] = i; */
+  /* int cromatic_num; //Número cromático */
+  /* cromatic_num = implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num); */
+  /* printf("Número cromático = %d \n", cromatic_num); */
+  //  printf("Cota superior = %d \n", upper_bound);
+  // printf("Cota inferior = %d \n", lower_bound);
   free(dump);
   free(compiled_num);
   free(compiled_edge);

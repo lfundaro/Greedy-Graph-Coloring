@@ -18,3 +18,14 @@ void initialize(int* array,int N){
   }
 }
 
+void main_col_init(struct row_vertex * main_col, int vertex_num) {
+  int j;
+  int k;
+  for (j = 0; j < vertex_num ; j++) {
+    main_col[j].color = -1; // Color inicial
+    for(k = 0; k < vertex_num; k++) 
+      main_col[j].color_around[k] = 0;
+  }
+}
+
+

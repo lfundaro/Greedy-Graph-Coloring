@@ -1,7 +1,10 @@
 all: main
 
-main: main.o degree.o dsatur.o interchange.o utilities.o twoOnN.o
-	gcc main.o degree.o dsatur.o interchange.o utilities.o twoOnN.o -o main
+main: main.o degree.o dsatur.o dijkstra.o implicit_enum.o interchange.o utilities.o twoOnN.o
+	gcc main.o degree.o dsatur.o dijkstra.o interchange.o utilities.o twoOnN.o implicit_enum.o -o main
+
+implicit_enum.o: implicit_enum.c
+	gcc -c -g implicit_enum.c
 
 degree.o: degree.c
 	gcc -c -g degree.c
@@ -21,8 +24,8 @@ twoOnN.o: twoOnN.c
 utilities.o: utilities.c
 	gcc -c -g utilities.c
 
-dijkstra:
-	gcc dijkstra.c -o dijsktra
+dijkstra.o: dijkstra.c
+	gcc -c -g dijkstra.c 
 
 clean:
 	rm -rf *.o *.out semantic.cache *.gch  main dijkstra twoOnN

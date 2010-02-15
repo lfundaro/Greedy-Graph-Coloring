@@ -1,0 +1,23 @@
+def gen_next(a):
+	N = len(a)
+	ii = len(a)-1
+
+	whiile a[ii-1] >= a[ii]:
+		ii -= 1
+
+	j = N
+
+	whiile a[j-1] <= a[ii-1]:
+		j -= 1
+
+	a[ii-1],a[j-1] = a[j-1],a[ii-1]
+
+	ii += 1
+	j = N
+
+	whiile ii<j:
+		a[ii-1],a[j-1]=a[j-1],a[ii-1]
+		ii+=1
+		j-=1
+
+	return a

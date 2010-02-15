@@ -82,3 +82,11 @@ void update_satur(struct row_vertex *, int *, int, int);
 int repeated(int, int *, int);
 
 int leastp_color(struct row_vertex *,int, int);
+
+void next_perm(int *, int);
+
+void main_col_init(struct row_vertex *, int);
+
+void update_color_around(struct row_vertex *, int, int);
+
+
