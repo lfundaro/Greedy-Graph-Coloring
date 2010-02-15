@@ -55,20 +55,40 @@ int main(void)
         adjacent2->next = main_col[d2].pt;
         main_col[d2].pt = (struct linked_list *) adjacent2;
       }
-      else {
-        linked_list * adjacents = malloc(sizeof(linked_list)); 
-        adjacents->vertex = d2;
-        // Insercion de elementos de lista por la izquierda
-        adjacents->next = main_col[d1].pt;
-        main_col[d1].pt = (struct linked_list *) adjacents;
-      }
+      /* else { */
+      /*   linked_list * adjacents = malloc(sizeof(linked_list)); */
+      /*   adjacents->vertex = d2; */
+      /*   // Insercion de elementos de lista por la izquierda */
+      /*   adjacents->next = main_col[d1].pt; */
+      /*   main_col[d1].pt = (struct linked_list *) adjacents; */
+      /* } */
     }
   }
   tuple * deg_vert = (tuple *) malloc(sizeof(tuple)*vertex_num);
   degree(main_col, vertex_num, deg_vert);
-  dsatur(main_col, deg_vert, vertex_num);
-  for(i = 0; i < vertex_num; i++) 
-    printf("vertice %d --> color %d \n",i+1, main_col[i].color);
+  pair result;  // Par clique-coloración
+  int upper_bound;
+  int lower_bound;
+
+  // Se obtiene cota superior
+  result = dsatur(main_col, deg_vert, vertex_num, -1);
+  upper_bound = result.coloring;
+  // Se obtiene cota inferior
+  lower_bound = -1;
+  int k;
+  int j;
+  for(i = 0; i < vertex_num; i++) {
+    for (j = 0; j < vertex_num ; j++) {
+      main_col[j].color = -1; // Color inicial
+      for(k = 0; k < vertex_num; k++) 
+        main_col[j].color_around[k] = 0;
+    }
+    result = dsatur(main_col, deg_vert, vertex_num, i);
+   if (result.clique > lower_bound)
+      lower_bound = result.clique;
+  }
+  printf("Cota superior = %d \n", upper_bound);
+  printf("Cota inferior = %d \n", lower_bound);
   free(dump);
   free(compiled_num);
   free(compiled_edge);
@@ -82,12 +102,13 @@ int main(void)
 /* RESPETE A LOS MUERTOS, NO LOS BORRE ! */
 /*****************************************/
 
+// Util cuando se quiere ver la matriz de adyacencias
   /* for(i = 0; i < vertex_num; i++) { */
-  /*   printf("adyacente a %d \n", main_col[i].vertex); */
-  /*   row_vertex * aux =(row_vertex *)  main_col[i].pt; */
+  /*   printf("adyacente a %d \n", main_col[i].vertex+1); */
+  /*   linked_list * aux =(linked_list *)  main_col[i].pt; */
   /*   while (aux != NULL) { */
-  /*     printf("%d \n",aux->vertex); */
-  /*     aux = (row_vertex *) aux->pt; */
+  /*     printf("%d \n",aux->vertex+1); */
+  /*     aux = (linked_list *) aux->next; */
   /*   } */
   /* } */
 

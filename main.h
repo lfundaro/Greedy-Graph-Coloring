@@ -38,6 +38,17 @@ typedef struct tuple {
   int degree;
 }tuple;
 
+/*****************************************************/
+/* Pair es la estructura que retorna Dsatur.         */
+/* Clique representa la cota inferior de coloración. */
+/* Coloring representa la cota superior.             */
+/*****************************************************/
+
+typedef struct pair {
+  int clique;
+  int coloring;
+} pair;
+
 /* typedef struct satur_list { */
 /*   int vertex; */
 /*   int degree; */
@@ -49,7 +60,7 @@ void degree(struct row_vertex *, int, struct tuple *);
 
 int compare(const void *, const void *);
 
-int dsatur(struct row_vertex *, struct tuple *, int);
+pair dsatur(struct row_vertex *, struct tuple *, int, int);
 
 int get_max_degree(struct tuple *, struct row_vertex *,int vertex_num);
 
