@@ -1,5 +1,8 @@
 - Liberar todos los apuntadores de la linked_list en adj_matrix
 - Quitar los flags de debugging al terminar todo
+- Liberar apuntadores asociados a funciones de dsatur.
+- used_colors se podria pasar como parámetro a dsatur para 
+no perder tiempo en inicializaciones.
 
 
 Discusión de implementación:
