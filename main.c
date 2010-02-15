@@ -65,10 +65,16 @@ int main(void)
     }
   }
   tuple * deg_vert = (tuple *) malloc(sizeof(tuple)*vertex_num);
-  /*  main_col[3].color=2;
+  /*main_col[1].color=1;
+  main_col[2].color=0;
+  main_col[3].color=1;
+  main_col[4].color=0;
+  main_col[5].color=0;
+  main_col[6].color=1;
+  main_col[7].color=0;
   main_col[8].color=1;
-  main_col[18].color=2;
-  interchange(main_col, 0, 3,vertex_num);*/
+  main_col[9].color=2;
+  interchange(main_col, 0, 2,vertex_num);*/
   degree(main_col, vertex_num, deg_vert);
   dsatur(main_col, deg_vert, vertex_num);
   for(i = 0; i < vertex_num; i++) 

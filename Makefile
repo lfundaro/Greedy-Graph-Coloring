@@ -25,6 +25,9 @@ dijkstra:
 	gcc dijkstra.c -o dijsktra
 
 clean:
-	rm -rf *.o *.out semantic.cache *.gch  main dijkstra twoOnN
+	rm -rf *.o *.out semantic.cache *.gch  main
+
+clean_backups:
+	rm -f *~
 
 # comentario useless
