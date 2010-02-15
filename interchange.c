@@ -67,7 +67,34 @@ int check_subgraph(int* neighbours,int n_of_neighbours,linked_array_list* compon
   return 0;
 }
 
-void interch(int min,int max,linked_array_list* components,row_vertex graph[],int vertex_num){
+void update_saturation(int vertex, int new_color,int old_color,row_vertex graph[],int* satur_degree){
+  linked_list* aux = graph[vertex].pt;
+  int v;
+
+  while(aux!=NULL){
+    v=aux->vertex;
+
+    if (graph[v].color_around[new_color]==0)
+      satur_degree[v]+=1;
+    graph[v].color_around[new_color]+=1;
+
+    graph[v].color_around[old_color]-=1;
+    if (graph[v].color_around[old_color]==0)
+      satur_degree[v]-=1;
+
+    aux=aux->next;
+  }
+}
+
+void del_array_list(linked_array_list* al){
+  if(al->next!=NULL){
+    del_array_list(al->next);
+  }
+  free(al->array);
+  free(al);
+}
+
+void interch(int min,int max,int vertex,linked_array_list* components,row_vertex graph[],int vertex_num,int* satur_degree){
   int i=0;
   linked_array_list* aux = components;
 
@@ -75,19 +102,22 @@ void interch(int min,int max,linked_array_list* components,row_vertex graph[],in
     if(aux->color==min)
       while (i<vertex_num){
 	if ((aux->array)[i]==1)
-	  if (graph[i].color==min)
+	  if (graph[i].color==min){
 	    graph[i].color=max;
-	  else
+	    update_saturation(i,max,min,graph,satur_degree);
+	  }
+	  else{
 	    graph[i].color=min;	    
+	    update_saturation(i,min,max,graph,satur_degree);
+	  }
 	i++;
       }
-    i=0;
+    i=0
     aux=aux->next;
   }
-  i=0;
 }
 
-row_vertex* interchange(row_vertex graph[], int vertex, int high_color, int vertex_num){
+row_vertex* interchange(row_vertex graph[],int* satur_degree,int vertex, int high_color, int vertex_num){
   //Estructuras para determinar los colores y nodos adyacentes
   int* color_set = (int*)malloc((high_color+1) * sizeof (int));
   int n_of_colors=0;
@@ -101,7 +131,7 @@ row_vertex* interchange(row_vertex graph[], int vertex, int high_color, int vert
 
   //Estructuras para el calculo de la combinatoria de colores
   int* next_swap = (int*)malloc(2 * sizeof (int));
-  int* pair = (int*)malloc(2 * sizeof (int));
+  int* pair;
   
   //Colores y nodos adyacentes, todos guardados en arreglos
   int* colors;
@@ -147,9 +177,8 @@ row_vertex* interchange(row_vertex graph[], int vertex, int high_color, int vert
   next_swap[1]=2;
 
   //Ciclo principal
+  pair=(int*)twoOnN(colors,next_swap,n_of_colors);
   j=0;
-  pair[0]=colors[0];
-  pair[1]=colors[1];
   while (pair!=NULL){
     components=(linked_array_list*)malloc(sizeof (linked_array_list));
     control_set=(int*)malloc(vertex_num * sizeof (int));
@@ -178,16 +207,17 @@ row_vertex* interchange(row_vertex graph[], int vertex, int high_color, int vert
 
     if (check_subgraph(neighbours,n_of_neighbours,components)){
       if (pair[0]<pair[1])
-	interch(pair[0],pair[1],components,graph,vertex_num);
+	interch(pair[0],pair[1],vertex,components,graph,vertex_num,satur_degree);
       else
-	interch(pair[1],pair[0],components,graph,vertex_num);
-    //  update_saturation();
+	interch(pair[1],pair[0],vertex,components,graph,vertex_num,satur_degree);
+      del_array_list(components);
       free(pair);
       break;
     } 
-    //del(components);
+    del_array_list(components);
     free(pair);
     pair=(int*)twoOnN(colors,next_swap,n_of_colors);
+    j=0;
   }
 
   free(color_set);
