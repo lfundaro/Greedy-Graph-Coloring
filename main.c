@@ -65,6 +65,10 @@ int main(void)
     }
   }
   tuple * deg_vert = (tuple *) malloc(sizeof(tuple)*vertex_num);
+  /*  main_col[3].color=2;
+  main_col[8].color=1;
+  main_col[18].color=2;
+  interchange(main_col, 0, 3,vertex_num);*/
   degree(main_col, vertex_num, deg_vert);
   pair result;  // Par clique-coloración
   int upper_bound;

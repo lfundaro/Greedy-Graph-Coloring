@@ -3,7 +3,7 @@
   elementos en un arreglo de N. Funciona a traves
   de efectos de borde.
 */
-#include <stdio.h>
+#include "main.h"
 
 /*array: Arreglo al cual se le estan calculando
          las combinaciones de 2
@@ -46,6 +46,7 @@ int* twoOnN(int array[],int next_swap[],int N){
   return pair;
 }
 
+/*
 int main(){
   int N = 6;
   int* array = (int*)malloc(N * sizeof (int));
@@ -67,6 +68,7 @@ int main(){
       for(i=0;i<2;i++)
       printf("%d,",pair[i]);
       printf("\n");
-      printf("---------------\n");*/
+      printf("---------------\n");
   }
 }
+*/
