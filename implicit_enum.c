@@ -1,5 +1,35 @@
 # include "main.h"
 
+int check_for_clike(row_vertex graph[],int vertex_num,linked_list* set){
+  linked_list* nxt = set;
+  linked_list* aux;
+  int* neighbours;
+  int i;
+
+  while (nxt!=NULL){
+    aux = graph[nxt->vertex].pt;
+    neighbours = (int*)malloc(vertex_num * sizeof (int));
+    for(i=0;i<vertex_num;i++){
+      neighbours[i]=0;
+    }
+
+    while (aux != NULL){
+      neighbours[aux->vertex]=1;
+      aux=aux->next;
+    }
+    
+    aux=nxt->next;
+    while (aux != NULL){
+      if (neighbours[aux->vertex]!=1)
+	return 0;
+    }
+
+    nxt=nxt->next;
+  }
+
+  return 1;
+}
+
 int implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bound, int * vertices, int vertex_num) {
   int i;
   int used_colors[vertex_num];
