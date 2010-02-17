@@ -32,6 +32,3 @@ DSATUR:
           el grado de saturación, de lo contrario lo dejo intacto.
 (CHECK) - Para colorear un vértice v_i, el menor color posible se saca a partir del arreglo de colores asociado 
           a dicho vértice.
- 
-          
-        
