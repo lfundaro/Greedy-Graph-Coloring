@@ -418,11 +418,3 @@ Grafo 20-0,9-3.col
 Cota superior = 12 
 Cota inferior = 10 
  
-Grafo test.col
-Cota superior = 3 
-Cota inferior = 3 
- 
-Grafo test.col~
-Cota superior = 2 
-Cota inferior = 2 
- 
