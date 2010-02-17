@@ -101,36 +101,36 @@ void del_array_list(linked_array_list* al){
 
 void interch(int min,int max,int vertex,linked_array_list* components,row_vertex graph[],int vertex_num,int* satur_degree){
   int i=0;
-  //linked_array_list* aux = components;
+  linked_array_list* aux = components;
 
-  for(i=0;i<vertex_num;++i){
-    if (graph[i].color==min){
-      graph[i].color=max;
-      update_saturation(i,max,min,graph,satur_degree);
-    }
-    else if(graph[i].color==max){
-      graph[i].color=min;
-      update_saturation(i,min,max,graph,satur_degree);
-    }
-  }
-
-  /* while (aux!=NULL){ */
-  /*   if(aux->color==min) */
-  /*     while (i<vertex_num){ */
-  /* 	if ((aux->array)[i]==1) */
-  /* 	  if (graph[i].color==min){ */
-  /* 	    graph[i].color=max; */
-  /* 	    update_saturation(i,max,min,graph,satur_degree); */
-  /* 	  } */
-  /* 	  else{ */
-  /* 	    graph[i].color=min;	     */
-  /* 	    update_saturation(i,min,max,graph,satur_degree); */
-  /* 	  } */
-  /* 	i++; */
-  /*     } */
-  /*   i=0; */
-  /*   aux=aux->next; */
+  /* for(i=0;i<vertex_num;++i){ */
+  /*   if (graph[i].color==min){ */
+  /*     graph[i].color=max; */
+  /*     update_saturation(i,max,min,graph,satur_degree); */
+  /*   } */
+  /*   else if(graph[i].color==max){ */
+  /*     graph[i].color=min; */
+  /*     update_saturation(i,min,max,graph,satur_degree); */
+  /*   } */
   /* } */
+
+  while (aux!=NULL){
+    if(aux->color==min)
+      while (i<vertex_num){
+  	if ((aux->array)[i]==1)
+  	  if (graph[i].color==min){
+  	    graph[i].color=max;
+  	    update_saturation(i,max,min,graph,satur_degree);
+  	  }
+  	  else{
+  	    graph[i].color=min;
+  	    update_saturation(i,min,max,graph,satur_degree);
+  	  }
+  	i++;
+      }
+    i=0;
+    aux=aux->next;
+  }
 }
 
 row_vertex* interchange(row_vertex graph[],int* satur_degree,int vertex, int high_color, int vertex_num){
