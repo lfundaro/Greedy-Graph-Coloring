@@ -74,6 +74,11 @@ void update_saturation(int vertex, int new_color,int old_color,row_vertex graph[
   while(aux!=NULL){
     v=aux->vertex;
 
+    if (satur_degree[v]==-1){
+      aux=aux->next;
+      continue;
+    }
+
     if (graph[v].color_around[new_color]==0)
       satur_degree[v]+=1;
     graph[v].color_around[new_color]+=1;
@@ -98,19 +103,30 @@ void interch(int min,int max,int vertex,linked_array_list* components,row_vertex
   int i=0;
   linked_array_list* aux = components;
 
+  /* for(i=0;i<vertex_num;++i){ */
+  /*   if (graph[i].color==min){ */
+  /*     graph[i].color=max; */
+  /*     update_saturation(i,max,min,graph,satur_degree); */
+  /*   } */
+  /*   else if(graph[i].color==max){ */
+  /*     graph[i].color=min; */
+  /*     update_saturation(i,min,max,graph,satur_degree); */
+  /*   } */
+  /* } */
+
   while (aux!=NULL){
     if(aux->color==min)
       while (i<vertex_num){
-	if ((aux->array)[i]==1)
-	  if (graph[i].color==min){
-	    graph[i].color=max;
-	    update_saturation(i,max,min,graph,satur_degree);
-	  }
-	  else{
-	    graph[i].color=min;	    
-	    update_saturation(i,min,max,graph,satur_degree);
-	  }
-	i++;
+  	if ((aux->array)[i]==1)
+  	  if (graph[i].color==min){
+  	    graph[i].color=max;
+  	    update_saturation(i,max,min,graph,satur_degree);
+  	  }
+  	  else{
+  	    graph[i].color=min;
+  	    update_saturation(i,min,max,graph,satur_degree);
+  	  }
+  	i++;
       }
     i=0;
     aux=aux->next;

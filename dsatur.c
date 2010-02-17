@@ -61,7 +61,7 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
       v_i = get_max_degree(base,main_col,vertex_num);
       last_color = leastp_color(main_col, v_i, vertex_num);
       //Actualizar color más alto usado
-      if (last_color > highest_color) 
+      if (last_color > highest_color)
         highest_color = last_color;
       //Chequeos para intercambio
       if (used_colors[last_color] == 0) {
@@ -70,6 +70,7 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
         if (highest_color > 0 && num_colored > 2) {
           interchange(main_col, satur_degree, v_i, highest_color, vertex_num);
           last_color = leastp_color(main_col, v_i, vertex_num);
+      	  i=0;
         }
       }
       main_col[v_i].color = last_color;
@@ -87,6 +88,7 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
         if (highest_color > 0 && num_colored > 2) {
           interchange(main_col, satur_degree, v_i, highest_color, vertex_num);
           last_color = leastp_color(main_col, v_i, vertex_num);
+      	  i=0;
         }
       }
       main_col[v_i].color = last_color;
@@ -111,7 +113,7 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
     num_colored++; 
   } 
   
-  for(i = 0; i < vertex_num; i++) {
+  for(i = 0; i < vertex_num; i++){
     if (used_colors[i] == 1)
       upper_bound++;
   }
@@ -143,9 +145,9 @@ void update_satur(struct row_vertex * main_col, int * satur_degree, int v_i, int
       // Quiero saber si el vértice adyacente a v_i tiene en su 
       // arreglo de colores adyacentes el color "color".
       if (main_col[forward->vertex].color_around[color] == 0) {
-        main_col[forward->vertex].color_around[color]++;
         satur_degree[forward->vertex] += 1;
       }
+      main_col[forward->vertex].color_around[color]++;
     }
     forward = forward->next;  
   }

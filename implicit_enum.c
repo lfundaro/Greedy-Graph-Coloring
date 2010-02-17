@@ -1,13 +1,13 @@
 # include "main.h"
 
-int check_for_clike(row_vertex graph[],int vertex_num,linked_list* set){
-  linked_list* nxt = set;
+int check_for_clike(row_vertex graph[],int vertex_num,int* set,int setN){
   linked_list* aux;
   int* neighbours;
   int i;
+  int j;
 
-  while (nxt!=NULL){
-    aux = graph[nxt->vertex].pt;
+  for (j=0; j<setN ;++j){
+    aux = graph[set[j]].pt;
     neighbours = (int*)malloc(vertex_num * sizeof (int));
     for(i=0;i<vertex_num;i++){
       neighbours[i]=0;
@@ -18,13 +18,13 @@ int check_for_clike(row_vertex graph[],int vertex_num,linked_list* set){
       aux=aux->next;
     }
     
-    aux=nxt->next;
-    while (aux != NULL){
-      if (neighbours[aux->vertex]!=1)
-        return 0;
+    for(i=j+1;i<vertex_num;i++){
+      if (neighbours[set[i]]!=1){
+	free(neighbours);
+	return 0;
+      }
     }
-
-    nxt=nxt->next;
+    free(neighbours);
   }
 
   return 1;
@@ -177,7 +177,7 @@ int * get_vertices(int * members, int vertex_num) {
   for(i = 0; i < vertex_num; i++) {
     if (members[i]) {
       move_vertex(vertices, vertex_num, i);
-      printf("miembro %d \n", i+1);
+      //      printf("miembro %d \n", i+1);
     }
   }
   return vertices;
