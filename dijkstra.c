@@ -17,7 +17,7 @@
 */
 #include "main.h"
 
-void next_perm(int * array,int N){
+void next_perm(int * array,int N,int offset){
   register int ii = N-1;
   register int jj = N;
   register int aux = 0;

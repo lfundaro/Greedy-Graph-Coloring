@@ -1,6 +1,5 @@
 # include "main.h"
 
-
 int implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bound, int * vertices, int vertex_num) {
   int i;
   int used_colors[vertex_num];
