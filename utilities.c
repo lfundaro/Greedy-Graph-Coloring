@@ -28,4 +28,21 @@ void main_col_init(struct row_vertex * main_col, int vertex_num) {
   }
 }
 
+/* void append(linked_list * x, int vertex) { */
+/*   linked_list * y = malloc(sizeof(linked_list)); */
+/*   y->vertex = vertex; */
+/*   y->next = x; */
+/*   x = y; */
+/* } */
+
+/* void free_linked_list(linked_list * x) { */
+/*   linked_list * forward = x->next;; */
+/*   linked_list * back = x; */
+/*   while(forward != NULL) { */
+/*     free(back); */
+    
+    
+/*   } */
+/* } */
+
 
