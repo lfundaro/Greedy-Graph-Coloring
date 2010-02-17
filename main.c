@@ -84,14 +84,17 @@ int main(void)
   }
   printf("Cota superior = %d \n", upper_bound);
   printf("Cota inferior = %d \n", lower_bound);
-  /* if (lower_bound == upper_bound) */
-  /*   printf("Número cromático = %d \n", upper_bound); */
-  /* else { */
-  /*   int * vertices = get_vertices(members, vertex_num); */
-  /*   int cromatic_num; //Número cromático */
-  /*   //    cromatic_num = implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num); */
-  /*   // printf("Número cromático = %d \n", cromatic_num); */
-  /* } */
+  if (lower_bound == upper_bound)
+    printf("Número cromático = %d \n", upper_bound);
+  else {
+    int * vertices = get_vertices(members, vertex_num);
+    int cromatic_num; //Número cromático
+    /* for(i = 0; i < vertex_num; i++) */
+    /*   printf(" %d ", vertices[i]+1); */
+    /* printf("\n"); */
+    cromatic_num = implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num);
+    // printf("Número cromático = %d \n", cromatic_num);
+  }
   free(dump);
   free(compiled_num);
   free(compiled_edge);
