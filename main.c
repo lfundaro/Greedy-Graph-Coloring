@@ -1,4 +1,10 @@
 # include "main.h"
+# include <sys/time.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <signal.h>
+
+void alarmHandler();
 
 int main(void)
 {
@@ -60,9 +66,20 @@ int main(void)
   tuple * deg_vert = (tuple *) malloc(sizeof(tuple)*vertex_num);
   degree(main_col, vertex_num, deg_vert);
   pair result;  // Par clique-coloración
-  int upper_bound;// = (int *) malloc(sizeof(int));
-  int lower_bound;// = (int *) malloc(sizeof(int));
+  int upper_bound;
+  int lower_bound;
 
+  double TIEMPOINICIAL;
+  double TIEMPOFINAL;
+  struct timeval t_p;
+  //COMIENZA ALGORITMO
+  if (!gettimeofday(&t_p, NULL))
+    TIEMPOINICIAL = (double) t_p.tv_sec + ((double) t_p.tv_usec)/1000000.0;
+  else
+    printf("\n mal tiempo \n");
+
+  signal(SIGALRM, alarmHandler);
+  alarm(300); // 5 minutos medidos en segundos
   // Se obtiene cota superior
   result = dsatur(main_col, deg_vert, vertex_num, -1);
   upper_bound = result.coloring;
@@ -82,22 +99,39 @@ int main(void)
     }
     free(result.members);
   }
+  printf("Resultados de Brelaz+interchange \n");
   printf("Cota superior = %d \n", upper_bound);
   printf("Cota inferior = %d \n", lower_bound);
   if (lower_bound == upper_bound)
     printf("Número cromático = %d \n", upper_bound);
   else {
-    int * vertices = get_vertices(members, vertex_num);
+    int * vertices = malloc(sizeof(int) * vertex_num);
+    for(i = 0; i < vertex_num; i++) 
+      vertices[i] = i;
     int cromatic_num; //Número cromático
-    /* for(i = 0; i < vertex_num; i++) */
-    /*   printf(" %d ", vertices[i]+1); */
-    /* printf("\n"); */
     cromatic_num = implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num);
-    // printf("Número cromático = %d \n", cromatic_num);
+    printf("Resultado de enumeración implícita \n");
+    printf("Número cromático = %d \n", cromatic_num);
   }
+  // TERMINA ALGORITMO
+
+  if (!gettimeofday(&t_p, NULL))
+    TIEMPOFINAL =  (double) t_p.tv_sec + ((double) t_p.tv_usec)/1000000.0;
+  else
+    printf("\n mal tiempo \n");
+  
+  printf("Tiempo en segundos de ejecución del programa: %1.4f \n", (TIEMPOINICIAL - TIEMPOFINAL)*-1);
+
   free(dump);
   free(compiled_num);
   free(compiled_edge);
   free(line);
   return EXIT_SUCCESS;
 }
+
+
+void alarmHandler() {
+  printf("Se ha excedido el límite de 5 minutos \n");
+  exit(0);
+}
+

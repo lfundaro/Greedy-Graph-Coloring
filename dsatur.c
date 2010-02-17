@@ -25,11 +25,13 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
   
   // Coloración del primer vértice
   if (start_point == -1) { //Se parte del vértice de grado mayor
+    //Ordenamiento decreciente
     qsort(base, nmemb, size, compare);
     v_i = get_max_degree(base,main_col,vertex_num);
   }
   else
-    v_i = start_point;
+    //Start_point se usa cuando se corre el algoritmo N veces
+    v_i = start_point; 
 
   main_col[v_i].color = 0;
   last_color = 0;
@@ -70,9 +72,9 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
         if (highest_color > 0 && num_colored > 2) {
           interchange(main_col, satur_degree, v_i, highest_color, vertex_num);
           last_color = leastp_color(main_col, v_i, vertex_num);
-      	  i=0;
         }
       }
+      //Se colorea finalmente el vértice
       main_col[v_i].color = last_color;
     }
     else {
@@ -88,9 +90,9 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
         if (highest_color > 0 && num_colored > 2) {
           interchange(main_col, satur_degree, v_i, highest_color, vertex_num);
           last_color = leastp_color(main_col, v_i, vertex_num);
-      	  i=0;
         }
       }
+      //Se colorea finalmente el vértice
       main_col[v_i].color = last_color;
     }
 
@@ -106,16 +108,20 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
         return early_result;
       }
     }
-
+    //Se marca el color usado como usado
     used_colors[last_color] = 1;
+    //Grado de saturación en -1 porque no nos interesa 
+    //actualizar tal grado para un vértice ya coloreado
     satur_degree[v_i] = -1;  
+    //Se actualiza el arreglo color_around de los vértices
+    //adyacentes a v_i
     update_satur(main_col, satur_degree, v_i, last_color);
     num_colored++; 
   } 
   
   for(i = 0; i < vertex_num; i++){
     if (used_colors[i] == 1)
-      upper_bound++;
+      upper_bound++;  //Se cuenta número de colores usados
   }
   free(members);
   pair result;
@@ -125,6 +131,10 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
 }
 
 //Determina repeticiones en dsatur_degree
+//Cuando se elige un vértice con mayor grado de saturación
+//se quiere saber si existe otro que tiene el mismo grado 
+//para así descartar la posibilidad de buscar el de grado
+//mayor de incidencias.
 int repeated(int max, int * satur_degree, int vertex_num) {
   int i;
   for(i = 0; i < vertex_num; i++) {
@@ -170,6 +180,11 @@ int get_max_degree(tuple * base, struct row_vertex * main_col, int vertex_num) {
 }
 
 //Función que retorna el color más pequeño
+//Revisa en el arreglo color_around del vértice v_i que se 
+//quiere colorear cuál es la primera casilla que aparece en 0 
+//para así utiliza dicho color. 
+//Cuando la casilla está en 0 indica ausencia de color.
+//Cuando está en 1 indica presencia de color.
 int leastp_color(struct row_vertex * main_col,int v_i,int vertex_num) {
   int i;
   for(i = 0; i < vertex_num; i++) {
