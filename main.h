@@ -53,14 +53,8 @@ typedef struct tuple {
 typedef struct pair {
   int clique;
   int coloring;
+  int * members;
 } pair;
-
-/* typedef struct satur_list { */
-/*   int vertex; */
-/*   int degree; */
-/*   struct satur_list * next; */
-/* } satur_list; */
-
 
 void degree(struct row_vertex *, int, struct tuple *);
 
@@ -89,5 +83,9 @@ void next_perm(int *, int);
 void main_col_init(struct row_vertex *, int);
 
 void update_color_around(struct row_vertex *, int, int);
+
+int * get_vertices(int *, int);
+
+void move_vertex(int *, int, int);
 
 

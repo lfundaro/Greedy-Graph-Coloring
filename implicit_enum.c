@@ -1,13 +1,12 @@
 # include "main.h"
 
-
 int implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bound, int * vertices, int vertex_num) {
   int i;
   int used_colors[vertex_num];
   int color_count;
   int color;
-  initialize(used_colors, vertex_num);
-
+  int flag; //Para saber cuando se deja de ampliar la primera clique encontrada
+  int out;
   while(1) {
     //Inicialización de estructura de adyacencias y colores usados
     main_col_init(main_col, vertex_num); 
@@ -15,30 +14,37 @@ int implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bound
     color_count = 0;
     //Próxima permutación
     next_perm(vertices, vertex_num);
-    for(i = 0; i < vertex_num; i++) 
-      printf("%d \n", vertices[i]);
-    printf("---------------------\n");
+    flag = 1;
+    out = 0;
     for(i = 0; i < vertex_num; i++) { 
-      printf("%d \n", i);
-      color = leastp_color(main_col, i, vertex_num);
-      main_col[i].color = color;
+      color = leastp_color(main_col, vertices[i], vertex_num);
+      main_col[vertices[i]].color = color;
       if (used_colors[color] == 0) {
         color_count++;
         used_colors[color] = 1;
-        if (color_count > lower_bound) //Actualizar cota inferior ?
-          lower_bound = color_count;
+        if (flag && color_count > lower_bound){ //Actualizar cota inferior ?
+          //Si cota inferior se hace igual a cota 
+          //superior hay que retornar !
+          lower_bound = color_count; 
+          printf("new lower_bound is %d \n", lower_bound);
+        }
       }
-      //Se verifica adicionalmente que el vértice que 
-      //se colorea no sea el último.
-      if (color_count == upper_bound && i < vertex_num - 1) 
+      else 
+        flag = 0;    //No se sigue ampliando la clique encontrada
+      if (lower_bound == upper_bound)
+        return color_count;
+      if (color_count == upper_bound) {
+        out = 1;
         break;
+      }
       //Actualizamos vértices adyacentes con color usado
-      update_color_around(main_col, i, color);
+      update_color_around(main_col, vertices[i], color);
     }
-    if (i < vertex_num - 1) //Ocurrió que se alcanzó cota superior
-      continue;
     if (color_count == lower_bound) 
       return color_count;  //Número cromático
+    if (out) { //Ocurrió que se alcanzó cota superior
+      continue;
+    }
   }
 }
 
@@ -56,46 +62,28 @@ void update_color_around(struct row_vertex * main_col, int v_i, int color) {
   }
 }
 
-/*Descripcion
-  Algoritmo de Dijkstra para calcular la proxima
-  permutacion de un arreglo donde los elementos
-  tienen orden total.
-*/
-/*Performance
-  - Tarda ~10s para llamarse 700.000.000 veces inline
-    sobre un arreglo de 20 ints.
-  - Tarde ~12s para llamarse 700.000.000 haciendo la
-    llamada a la funcion completa sobre un arreglo de 
-    20 ints.
+int * get_vertices(int * members, int vertex_num) {
+  int * vertices = malloc(sizeof(int) * vertex_num);
+  int i;
+  //Inicialización
+  for(i = 0; i < vertex_num; i++) 
+    vertices[i] = i;
+  for(i = 0; i < vertex_num; i++) {
+    if (members[i]) {
+      move_vertex(vertices, vertex_num, i);
+      printf("miembro %d \n", i+1);
+    }
+  }
+  return vertices;
+}
 
-  NOTA: Dependiendo del contexto donde se llame,
-        poner ii,jj y aux en registros puede afectar
-	negativamente el performance de la aplicacion
-	en general.
-*/
-/* void next_perm(int * array,int N){ */
-/*   register int ii = N-1; */
-/*   register int jj = N; */
-/*   register int aux = 0; */
+void move_vertex(int * vertices, int vertex_num, int pos) {
+  int i;
+  int aux;
+  for(i = pos; i > 0; i--) {
+    aux = vertices[i];
+    vertices[i] = vertices[i - 1];
+    vertices[i - 1] = aux;
+  }
+}
 
-/*   while (array[ii-1] >= array[ii]) */
-/*     ii = ii-1; */
-
-/*   while (array[jj-1] <= array[ii-1]) */
-/*     jj = jj-1; */
-
-/*   aux = array[ii-1]; */
-/*   array[ii-1] = array[jj-1]; */
-/*   array[jj-1] = aux; */
-
-/*   ii = ii+1; */
-/*   jj = N; */
-
-/*   while (ii<jj){ */
-/*     aux = array[ii-1]; */
-/*     array[ii-1] = array[jj-1]; */
-/*     array[jj-1] = aux; */
-/*     ii = ii+1; */
-/*     jj = jj-1; */
-/*   } */
-/* } */

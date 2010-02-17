@@ -55,20 +55,13 @@ int main(void)
         adjacent2->next = main_col[d2].pt;
         main_col[d2].pt = (struct linked_list *) adjacent2;
       }
-      /* else { */
-      /*   linked_list * adjacents = malloc(sizeof(linked_list)); */
-      /*   adjacents->vertex = d2; */
-      /*   // Insercion de elementos de lista por la izquierda */
-      /*   adjacents->next = main_col[d1].pt; */
-      /*   main_col[d1].pt = (struct linked_list *) adjacents; */
-      /* } */
     }
   }
   tuple * deg_vert = (tuple *) malloc(sizeof(tuple)*vertex_num);
   degree(main_col, vertex_num, deg_vert);
   pair result;  // Par clique-coloración
-  int upper_bound;
-  int lower_bound;
+  int upper_bound;// = (int *) malloc(sizeof(int));
+  int lower_bound;// = (int *) malloc(sizeof(int));
 
   // Se obtiene cota superior
   result = dsatur(main_col, deg_vert, vertex_num, -1);
@@ -77,62 +70,31 @@ int main(void)
   lower_bound = -1;
   int k;
   int j;
+  // miembros tentativos
+  int * members = malloc(sizeof(int) * vertex_num);
   for(i = 0; i < vertex_num; i++) {
     main_col_init(main_col, vertex_num);
     result = dsatur(main_col, deg_vert, vertex_num, i);
-    if (result.clique > lower_bound)
+    if (result.clique > lower_bound) {
       lower_bound = result.clique;
+      members = result.members;
+      continue;
+    }
+    free(result.members);
   }
   printf("Cota superior = %d \n", upper_bound);
   printf("Cota inferior = %d \n", lower_bound);
-  /* int * vertices = malloc(sizeof(int) * vertex_num); */
-  /* for(i = 0; i < vertex_num; i++)  */
-  /*   vertices[i] = i; */
-  /* int cromatic_num; //Número cromático */
-  /* cromatic_num = implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num); */
-  /* printf("Número cromático = %d \n", cromatic_num); */
-  //  printf("Cota superior = %d \n", upper_bound);
-  // printf("Cota inferior = %d \n", lower_bound);
+  if (lower_bound == upper_bound)
+    printf("Número cromático = %d \n", upper_bound);
+  else {
+    int * vertices = get_vertices(members, vertex_num);
+    int cromatic_num; //Número cromático
+    //    cromatic_num = implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num);
+    // printf("Número cromático = %d \n", cromatic_num);
+  }
   free(dump);
   free(compiled_num);
   free(compiled_edge);
   free(line);
   return EXIT_SUCCESS;
 }
-
-
-/*****************************************/
-/* EL CEMENTERIO DE LOS CÓDIGOS          */
-/* RESPETE A LOS MUERTOS, NO LOS BORRE ! */
-/*****************************************/
-
-// Util cuando se quiere ver la matriz de adyacencias
-  /* for(i = 0; i < vertex_num; i++) { */
-  /*   printf("adyacente a %d \n", main_col[i].vertex+1); */
-  /*   linked_list * aux =(linked_list *)  main_col[i].pt; */
-  /*   while (aux != NULL) { */
-  /*     printf("%d \n",aux->vertex+1); */
-  /*     aux = (linked_list *) aux->next; */
-  /*   } */
-  /* } */
-
-  /* int i; */
-  /* for(i = 0; i < nmemb; i++) { */
-  /*   printf("Vertice - Grado \n"); */
-  /*   printf("%d %d \n", deg_vert[i].vertex,deg_vert[i].degree); */
-  /* } */
-
-
-  /* for(i = 0; i < vertex_num; i++) { */
-  /*   printf("vertice - grado \n"); */
-  /*   printf("%d %d \n", deg_vert[i].vertex, deg_vert[i].degree); */
-  /* }     */
-
- /* int kk; */
-  /* for(i = 0; i < vertex_num ; i++) { */
-  /*   printf("vertice %d, tiene color %d \n", main_col[i].vertex, main_col[i].color); */
-  /*   for(kk=0; kk<vertex_num;kk++)  */
-  /*     printf("Color %d, %d \n",kk, main_col[i].color_around[i]); */
-  /*   printf("--------------\n"); */
-  /* } */
- 
