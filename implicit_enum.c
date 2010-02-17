@@ -7,6 +7,7 @@ int implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bound
   int color;
   int flag; //Para saber cuando se deja de ampliar la primera clique encontrada
   int out;
+
   while(1) {
     //Inicialización de estructura de adyacencias y colores usados
     main_col_init(main_col, vertex_num); 
