@@ -27,6 +27,17 @@ typedef struct linked_array_list {
   struct linked_array_list * next;
 } linked_array_list;
 
+
+
+/********************************************************/
+/* Estructura que se utiliza para representar           */
+/* la matriz de adyacencias. El apuntador a linked_list */
+/* sirve para apuntar la estructura de nodos adyacentes */
+/* al vértice vertex. El apuntador a entero llamado     */
+/* color_around es una estructura que permite saber     */
+/* cuáles son los colores que el vértice vertex tiene   */
+/* en sus adyacencias.                                  */
+/********************************************************/
 typedef struct row_vertex {
   int vertex;
   int color;
@@ -44,12 +55,15 @@ typedef struct tuple {
   int degree;
 }tuple;
 
-/*****************************************************/
-/* Pair es la estructura que retorna Dsatur.         */
-/* Clique representa la cota inferior de coloración. */
-/* Coloring representa la cota superior.             */
-/*****************************************************/
 
+
+/**************************************************************/
+/* Pair es la estructura que retorna Dsatur.                  */
+/* Clique representa la cota inferior de coloración.          */
+/* Coloring representa la cota superior.                      */
+/* Members es un arreglo que contiene los miembros            */
+/* que conforman la clique máxima encontrada por el algoritmo */
+/**************************************************************/
 typedef struct pair {
   int clique;
   int coloring;
