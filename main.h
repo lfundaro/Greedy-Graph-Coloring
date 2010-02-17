@@ -88,4 +88,6 @@ int * get_vertices(int *, int);
 
 void move_vertex(int *, int, int);
 
+void color_fixed(int *, struct row_vertex *, int);
+
 

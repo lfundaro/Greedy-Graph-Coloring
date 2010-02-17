@@ -89,7 +89,10 @@ int main(void)
   else {
     int * vertices = get_vertices(members, vertex_num);
     int cromatic_num; //Número cromático
-    //    cromatic_num = implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num);
+    /* for(i = 0; i < vertex_num; i++) */
+    /*   printf(" %d ", vertices[i]+1); */
+    /* printf("\n"); */
+    cromatic_num = implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num);
     // printf("Número cromático = %d \n", cromatic_num);
   }
   free(dump);
