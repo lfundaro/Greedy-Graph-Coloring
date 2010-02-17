@@ -218,7 +218,7 @@ int makes_seq(struct row_vertex * main_col, int * fixed, int * possible_clique, 
   return 1;
 }
 
-int get_count(struct row_vertex *, int * fixed, int fixed_size, int * used_colors) {
+int get_count(struct row_vertex * main_col, int * fixed, int fixed_size, int * used_colors) {
   int add = 0;
   int i;
   for(i = 0; i < fixed_size; i++) {
