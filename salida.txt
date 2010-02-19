@@ -1,0 +1,1477 @@
+**************************
+Numero de vértices: 8
+**************************
+
+ ----------- Salida de correr el grafo grafo grafos/0811.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+0 7 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0001.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0812.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+0 7 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0001.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0813.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+0 1 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0001.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0831.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+1 3 4 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0002.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0832.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+4 1 5 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0002.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0833.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+0 1 4 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0002.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0851.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+1 3 2 4 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0002.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0852.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+0 7 4 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0003.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0853.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+0 1 4 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0003.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0871.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 2 5 6 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0003.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0872.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 5 4 7 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0006.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0873.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 5.
+Maximo clique:
+0 1 4 2 6 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0004.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0891.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 6.
+Cota inferior dada por correr N veces DSATUR+Interchange: 6.
+Maximo clique:
+0 4 2 3 6 1 
+Color óptimo obtenido en la enumeracion implícita: 6.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0005.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0892.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 6.
+Cota inferior dada por correr N veces DSATUR+Interchange: 6.
+Maximo clique:
+0 4 2 5 7 6 
+Color óptimo obtenido en la enumeracion implícita: 6.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0005.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/0893.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 6.
+Cota inferior dada por correr N veces DSATUR+Interchange: 6.
+Maximo clique:
+0 4 2 3 6 1 
+Color óptimo obtenido en la enumeracion implícita: 6.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0006.
+
+ ---------------------------------------------------------- 
+
+**************************
+Numero de vértices: 10
+**************************
+
+ ----------- Salida de correr el grafo grafo grafos/1011.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+0 5 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0003.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1012.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+2 5 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0002.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1013.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+1 7 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0002.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1031.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+0 9 8 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0005.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1032.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+2 8 5 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0003.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1033.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+5 8 7 6 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0004.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1051.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 7 6 4 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0007.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1052.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+0 1 4 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0005.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1053.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+5 7 8 6 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0005.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1071.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 5.
+Maximo clique:
+1 4 2 7 6 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0008.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1072.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 6 8 9 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0097.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1073.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 7 9 1 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0094.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1091.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 8.
+Cota inferior dada por correr N veces DSATUR+Interchange: 8.
+Maximo clique:
+0 1 2 6 4 7 9 8 
+Color óptimo obtenido en la enumeracion implícita: 8.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0013.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1092.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 7.
+Cota inferior dada por correr N veces DSATUR+Interchange: 7.
+Maximo clique:
+0 5 8 6 7 4 9 
+Color óptimo obtenido en la enumeracion implícita: 7.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0014.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1093.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 7.
+Cota inferior dada por correr N veces DSATUR+Interchange: 7.
+Maximo clique:
+0 5 2 4 9 7 8 
+Color óptimo obtenido en la enumeracion implícita: 7.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0013.
+
+ ---------------------------------------------------------- 
+
+**************************
+Numero de vértices: 12
+**************************
+
+ ----------- Salida de correr el grafo grafo grafos/1211.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+0 11 4 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0004.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1212.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+0 5 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0004.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1213.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+0 3 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0004.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1231.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 7 4 11 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0009.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1232.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+1 5 2 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0006.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1233.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+0 5 7 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 1.8220.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1251.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 6.
+Cota inferior dada por correr N veces DSATUR+Interchange: 6.
+Maximo clique:
+0 4 9 10 5 6 
+Color óptimo obtenido en la enumeracion implícita: 6.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0004.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1252.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+4 5 2 1 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0004.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1253.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 8 3 5 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La corrida tardo 0.0011.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1271.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 7.
+Cota inferior dada por correr N veces DSATUR+Interchange: 7.
+Maximo clique:
+0 1 5 11 4 9 10 
+Color óptimo obtenido en la enumeracion implícita: 7.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0007.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1272.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 6.
+Cota inferior dada por correr N veces DSATUR+Interchange: 6.
+Maximo clique:
+8 2 1 11 6 10 
+Color óptimo obtenido en la enumeracion implícita: 6.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0006.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1273.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 7.
+Cota inferior dada por correr N veces DSATUR+Interchange: 7.
+Maximo clique:
+0 3 11 5 8 2 1 
+Color óptimo obtenido en la enumeracion implícita: 7.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0008.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1291.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 8.
+Cota inferior dada por correr N veces DSATUR+Interchange: 8.
+Maximo clique:
+0 1 4 6 5 11 7 10 
+Color óptimo obtenido en la enumeracion implícita: 8.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0009.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1292.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 8.
+Cota inferior dada por correr N veces DSATUR+Interchange: 8.
+Maximo clique:
+1 7 2 11 10 9 6 3 
+Color óptimo obtenido en la enumeracion implícita: 8.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0009.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1293.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 8.
+Cota inferior dada por correr N veces DSATUR+Interchange: 8.
+Maximo clique:
+0 11 8 3 2 4 9 5 
+Color óptimo obtenido en la enumeracion implícita: 8.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0010.
+
+ ---------------------------------------------------------- 
+
+**************************
+Numero de vértices: 14
+**************************
+
+ ----------- Salida de correr el grafo grafo grafos/1411.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+0 9 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0002.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1412.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+1 13 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0002.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1413.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+0 11 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0002.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1431.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 10 8 2 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0005.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1432.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+5 9 13 7 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0005.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1433.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+1 11 9 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0004.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1451.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 5.
+Maximo clique:
+0 7 10 3 9 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0008.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1452.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+5 7 9 8 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 21.2854.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1453.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+1 9 5 12 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 23.8494.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1471.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 7.
+Cota inferior dada por correr N veces DSATUR+Interchange: 7.
+Maximo clique:
+0 7 3 11 1 12 5 
+Color óptimo obtenido en la enumeracion implícita: 7.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0012.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1472.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 6.
+Cota inferior dada por correr N veces DSATUR+Interchange: 6.
+Maximo clique:
+0 12 10 5 8 6 
+Color óptimo obtenido en la enumeracion implícita: 6.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0010.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1473.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 6.
+Cota inferior dada por correr N veces DSATUR+Interchange: 6.
+Maximo clique:
+0 9 2 5 6 12 
+Color óptimo obtenido en la enumeracion implícita: 6.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0012.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1491.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 9.
+Cota inferior dada por correr N veces DSATUR+Interchange: 9.
+Maximo clique:
+0 1 12 10 7 3 11 9 5 
+Color óptimo obtenido en la enumeracion implícita: 9.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0018.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1492.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 10.
+Cota inferior dada por correr N veces DSATUR+Interchange: 10.
+Maximo clique:
+1 5 9 4 2 10 3 8 12 6 
+Color óptimo obtenido en la enumeracion implícita: 10.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0019.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1493.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 11.
+Cota inferior dada por correr N veces DSATUR+Interchange: 11.
+Maximo clique:
+1 2 11 9 5 6 10 7 4 8 13 
+Color óptimo obtenido en la enumeracion implícita: 11.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0022.
+
+ ---------------------------------------------------------- 
+
+**************************
+Numero de vértices: 16
+**************************
+
+ ----------- Salida de correr el grafo grafo grafos/1611.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 2.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+0 7 
+Color óptimo obtenido en la enumeracion implícita: 2.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0003.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1612.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+0 15 14 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0003.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1613.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+6 7 11 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0003.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1631.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+0 14 2 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0006.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1632.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 14 12 15 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0008.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1633.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+1 11 13 5 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0009.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1651.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 5.
+Maximo clique:
+0 14 6 9 3 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0014.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1652.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 5.
+Maximo clique:
+1 14 3 8 6 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0012.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1653.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 6.
+Cota inferior dada por correr N veces DSATUR+Interchange: 5.
+Maximo clique:
+1 11 13 4 10 El algoritmo tardo mas de 5 minutos, por lo que se finalizo.
+El mejor color alcanzado fue el siguiente: 6.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1671.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 7.
+Cota inferior dada por correr N veces DSATUR+Interchange: 7.
+Maximo clique:
+0 14 15 6 11 3 8 
+Color óptimo obtenido en la enumeracion implícita: 7.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0019.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1672.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 7.
+Cota inferior dada por correr N veces DSATUR+Interchange: 7.
+Maximo clique:
+12 14 6 5 1 7 15 
+Color óptimo obtenido en la enumeracion implícita: 7.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0019.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1673.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 8.
+Cota inferior dada por correr N veces DSATUR+Interchange: 8.
+Maximo clique:
+0 11 14 9 12 6 2 15 
+Color óptimo obtenido en la enumeracion implícita: 8.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0022.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1691.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 10.
+Cota inferior dada por correr N veces DSATUR+Interchange: 10.
+Maximo clique:
+0 13 14 9 5 11 15 3 2 12 
+Color óptimo obtenido en la enumeracion implícita: 10.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0031.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1692.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 11.
+Cota inferior dada por correr N veces DSATUR+Interchange: 11.
+Maximo clique:
+0 1 15 14 4 6 9 11 8 12 5 
+Color óptimo obtenido en la enumeracion implícita: 11.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0035.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1693.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 13.
+Cota inferior dada por correr N veces DSATUR+Interchange: 13.
+Maximo clique:
+0 15 2 12 4 5 6 11 14 8 1 13 3 
+Color óptimo obtenido en la enumeracion implícita: 13.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0038.
+
+ ---------------------------------------------------------- 
+
+**************************
+Numero de vértices: 18
+**************************
+
+ ----------- Salida de correr el grafo grafo grafos/1811.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+2 10 13 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0007.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1812.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+10 14 12 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0004.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1813.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+0 17 6 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0005.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1831.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+2 6 10 13 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0010.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1832.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+0 14 5 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0008.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1833.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 14 7 10 El algoritmo tardo mas de 5 minutos, por lo que se finalizo.
+El mejor color alcanzado fue el siguiente: 5.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1851.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 4 6 16 El algoritmo tardo mas de 5 minutos, por lo que se finalizo.
+El mejor color alcanzado fue el siguiente: 5.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1852.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 5.
+Maximo clique:
+0 14 4 12 5 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0018.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1853.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 5.
+Maximo clique:
+0 14 9 6 13 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0020.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1871.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 7.
+Cota inferior dada por correr N veces DSATUR+Interchange: 7.
+Maximo clique:
+0 17 4 14 6 5 16 
+Color óptimo obtenido en la enumeracion implícita: 7.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0032.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1872.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 7.
+Cota inferior dada por correr N veces DSATUR+Interchange: 7.
+Maximo clique:
+1 15 4 7 14 2 9 
+Color óptimo obtenido en la enumeracion implícita: 7.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0033.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1873.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 7.
+Cota inferior dada por correr N veces DSATUR+Interchange: 7.
+Maximo clique:
+0 9 14 11 10 13 6 
+Color óptimo obtenido en la enumeracion implícita: 7.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0031.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1891.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 12.
+Cota inferior dada por correr N veces DSATUR+Interchange: 12.
+Maximo clique:
+0 13 16 6 3 17 4 7 12 9 14 5 
+Color óptimo obtenido en la enumeracion implícita: 12.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0059.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1892.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 12.
+Cota inferior dada por correr N veces DSATUR+Interchange: 12.
+Maximo clique:
+1 4 15 11 12 7 8 16 14 10 13 2 
+Color óptimo obtenido en la enumeracion implícita: 12.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0111.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/1893.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 11.
+Cota inferior dada por correr N veces DSATUR+Interchange: 11.
+Maximo clique:
+1 3 9 15 14 17 11 13 6 8 0 
+Color óptimo obtenido en la enumeracion implícita: 11.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0053.
+
+ ---------------------------------------------------------- 
+
+**************************
+Numero de vértices: 20
+**************************
+
+ ----------- Salida de correr el grafo grafo grafos/2011.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 3.
+Maximo clique:
+2 4 7 
+Color óptimo obtenido en la enumeracion implícita: 3.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0007.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2012.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 3.
+Cota inferior dada por correr N veces DSATUR+Interchange: 2.
+Maximo clique:
+0 1 El algoritmo tardo mas de 5 minutos, por lo que se finalizo.
+El mejor color alcanzado fue el siguiente: 3.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2013.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+6 13 10 19 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0008.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2031.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+0 10 2 4 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0016.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2032.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+8 9 14 13 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0017.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2033.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 4.
+Cota inferior dada por correr N veces DSATUR+Interchange: 4.
+Maximo clique:
+8 16 0 14 
+Color óptimo obtenido en la enumeracion implícita: 4.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0015.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2051.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 6.
+Cota inferior dada por correr N veces DSATUR+Interchange: 6.
+Maximo clique:
+2 15 16 10 6 4 
+Color óptimo obtenido en la enumeracion implícita: 6.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0035.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2052.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 6.
+Cota inferior dada por correr N veces DSATUR+Interchange: 5.
+Maximo clique:
+3 10 15 12 11 El algoritmo tardo mas de 5 minutos, por lo que se finalizo.
+El mejor color alcanzado fue el siguiente: 6.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2053.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 5.
+Cota inferior dada por correr N veces DSATUR+Interchange: 5.
+Maximo clique:
+0 6 14 18 8 
+Color óptimo obtenido en la enumeracion implícita: 5.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0086.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2071.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 9.
+Cota inferior dada por correr N veces DSATUR+Interchange: 8.
+Maximo clique:
+0 15 12 19 9 6 8 4 El algoritmo tardo mas de 5 minutos, por lo que se finalizo.
+El mejor color alcanzado fue el siguiente: 9.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2072.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 7.
+Cota inferior dada por correr N veces DSATUR+Interchange: 7.
+Maximo clique:
+0 19 14 3 7 18 4 
+Color óptimo obtenido en la enumeracion implícita: 7.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0185.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2073.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 9.
+Cota inferior dada por correr N veces DSATUR+Interchange: 8.
+Maximo clique:
+2 6 14 9 13 8 10 18 
+Color óptimo obtenido en la enumeracion implícita: 8.
+La corrida tardo 79.3718.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2091.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 13.
+Cota inferior dada por correr N veces DSATUR+Interchange: 13.
+Maximo clique:
+0 19 15 12 10 5 2 9 11 7 6 3 13 
+Color óptimo obtenido en la enumeracion implícita: 13.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0127.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2092.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 13.
+Cota inferior dada por correr N veces DSATUR+Interchange: 13.
+Maximo clique:
+1 19 18 5 6 15 8 14 12 13 10 9 4 
+Color óptimo obtenido en la enumeracion implícita: 13.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0087.
+
+ ---------------------------------------------------------- 
+
+
+ ----------- Salida de correr el grafo grafo grafos/2093.col ----------- 
+
+Se creó el grafo sin ningun problema.
+Cota superior dada por DSATUR+Interchange: 12.
+Cota inferior dada por correr N veces DSATUR+Interchange: 12.
+Maximo clique:
+2 6 14 9 8 11 10 13 4 15 7 18 
+Color óptimo obtenido en la enumeracion implícita: 12.
+La heurística DSATUR+Interchange obtuvo el óptimo.
+La corrida tardo 0.0084.
+
+ ---------------------------------------------------------- 
+
