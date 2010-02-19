@@ -71,7 +71,7 @@ void update_saturation(int vertex, int new_color,int old_color,row_vertex graph[
   linked_list* aux = graph[vertex].pt;
   int v;
 
-  while(aux!=NULL){
+  while(aux!=NULL) {
     v=aux->vertex;
 
     if (satur_degree[v]==-1){

@@ -102,6 +102,9 @@ int * get_vertices(int *, int);
 
 void move_vertex(int *, int, int);
 
-void color_fixed(int *, struct row_vertex *, int);
+void color_fixed(int *, struct row_vertex *, int, int *, int *);
 
+void uncolor(struct row_vertex *, int, int);
+
+int makes_clique(struct row_vertex *, int, int *, int);
 

@@ -89,6 +89,7 @@ int main(void)
   int j;
   // miembros tentativos
   int * members = malloc(sizeof(int) * vertex_num);
+  int * cromatic_num = NULL; //Número cromático
   for(i = 0; i < vertex_num; i++) {
     main_col_init(main_col, vertex_num);
     result = dsatur(main_col, deg_vert, vertex_num, i);
@@ -99,6 +100,7 @@ int main(void)
     }
     free(result.members);
   }
+
   printf("Resultados de Brelaz+interchange \n");
   printf("Cota superior = %d \n", upper_bound);
   printf("Cota inferior = %d \n", lower_bound);
@@ -106,15 +108,14 @@ int main(void)
     printf("Número cromático = %d \n", upper_bound);
   else {
     int * vertices = malloc(sizeof(int) * vertex_num);
-    for(i = 0; i < vertex_num; i++) 
-      vertices[i] = i;
-    int cromatic_num; //Número cromático
-    cromatic_num = implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num);
+    vertices = get_vertices(members, vertex_num);
+    cromatic_num = (int *) implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num);
+    free(vertices);
     printf("Resultado de enumeración implícita \n");
-    printf("Número cromático = %d \n", cromatic_num);
+    printf("Número cromático = %d \n", *cromatic_num);
   }
   // TERMINA ALGORITMO
-
+  
   if (!gettimeofday(&t_p, NULL))
     TIEMPOFINAL =  (double) t_p.tv_sec + ((double) t_p.tv_usec)/1000000.0;
   else
@@ -126,6 +127,9 @@ int main(void)
   free(compiled_num);
   free(compiled_edge);
   free(line);
+  free(members);
+  if (cromatic_num)
+    free(cromatic_num);
   return EXIT_SUCCESS;
 }
 
