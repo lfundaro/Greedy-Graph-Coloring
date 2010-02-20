@@ -28,8 +28,5 @@ dijkstra.o: dijkstra.c
 	gcc -c dijkstra.c 
 
 clean:
-	rm -rf *.o *.out semantic.cache *.gch  main
-
-clean_backups:
-	rm -f *~
+	rm -rf *.o *.out semantic.cache *.gch *~  main
 
