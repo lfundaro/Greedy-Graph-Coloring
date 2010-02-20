@@ -107,14 +107,14 @@ int main(void)
   if (lower_bound == upper_bound)
     printf("Número cromático = %d \n", upper_bound);
   else {
-    int * vertices = (int *) malloc(sizeof(int) * vertex_num);
+    int * vertices;
     vertices = get_vertices(members, vertex_num);
     free(members);
     cromatic_num = (int *) implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num);
-    free(vertices);
     printf("Resultado de enumeración implícita \n");
     printf("Número cromático = %d \n", *cromatic_num);
     free(cromatic_num);
+    free(vertices);
   }
 
   // TERMINA ALGORITMO
