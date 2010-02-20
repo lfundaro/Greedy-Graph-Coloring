@@ -22,8 +22,9 @@ int * implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bou
   for(i = 0; i < leftover; i++) 
     permuta[i] = vertices[fixed_s + i];
 
-  int stop;
+  int stop = 0;
   while(!stop) {
+
     //Inicialización de estructura de adyacencias y colores usados
     main_col_init(main_col, vertex_num); 
     initialize(used_colors, vertex_num);
@@ -42,7 +43,6 @@ int * implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bou
         if (flag && *color_count > lower_bound) { //Actualizar cota inferior ?
           //Si cota inferior se hace igual a cota 
           //superior hay que retornar !
-          printf("actualizar \n");
           lower_bound = *color_count; 
         }
       }
@@ -73,7 +73,11 @@ int * implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bou
     }
     //Próxima permutación
     next_perm(permuta, leftover);
-  }
+  } 
+
+  free(fixed);
+  free(permuta);
+  free(color_count);
   int * solution = (int *) malloc(sizeof(int));
   *solution = upper_bound;
   return solution;
@@ -95,9 +99,10 @@ void update_color_around(struct row_vertex * main_col, int v_i, int color) {
 }
 
 
-//Función que se iba a utilizar si se hubiese logrado
-//optimizar el árbol de soluciones de las permutaciones
-//que considera el algoritmo de Enumeración Implícita
+//Función que retorna un arreglo de vértices
+//el cual contiene en las primeras casillas 
+//los miembros de la clique máxima encontrada 
+//por Brelaz+Interchange
 int * get_vertices(int * members, int vertex_num) {
   int * vertices = malloc(sizeof(int) * vertex_num);
   int i;
@@ -112,9 +117,10 @@ int * get_vertices(int * members, int vertex_num) {
   return vertices;
 }
 
-//Función que se iba a utilizar si se hubiese logrado
-//optimizar el árbol de soluciones de las permutaciones
-//que considera el algoritmo de Enumeración Implícita
+//Función que se utiliza para mover los vértices 
+//pertenecientes a la clique encontrada por 
+//Brelaz-Interchange al principio del arreglo de 
+//vértices que retorna get_vertices
 void move_vertex(int * vertices, int vertex_num, int pos) {
   int i;
   int aux;
@@ -141,11 +147,16 @@ void color_fixed(int * fixed, struct row_vertex * main_col, int lower_bound, int
 
 int check_perm(int * permuta, int leftover) {
   int i;
+  int decision = 1;
+  int last;
   for(i = 1; i < leftover; i++) {
-    if (permuta[i] <= permuta[i - 1])
-      return 0;
+    if (permuta[i - 1] >= permuta[i])
+      last = 1;
+    else
+      last = 0;
+    decision = decision & last;
   }
-  return 1;
+  return decision;
 }
 
 
