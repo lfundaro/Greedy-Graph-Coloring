@@ -56,7 +56,7 @@ interesante hasta el punto de tratar de resolver dicho problema con
 algoritmos optimizados.
 
 \subsection{Breve descripción del problema}
-El problema se aborda con ayuda de la combinación los algoritmos 
+El problema consiste en encontrar la coloración mínima de un grafo. Dicho problema se e aborda con ayuda de la combinación los algoritmos 
 Brelaz+Interchange y Enumeración Implícita. El primer algoritmo es 
 usado para encontrar las cotas tanto superior como inferior con las que 
 el algoritmo de Enumeración Implícita puede encontrar una solución optimal
@@ -84,7 +84,7 @@ hubiese gastado espacio que nunca sería utilizado en caso de tener un grafo poc
 \subsubsection{Estructuras de datos}
 \begin{itemize}
  \item \textbf{Linked-List}:  Tipo lista enlazada que contiene un entero que representa un vértice y un apuntador
- a la próxima estructura de lista enlazada. Esta estructura se eligió por su uso de espacio eficiente.
+ a la próxima estructura de lista enlazada. Esta estructura se eligió por su uso eficiente de memoria.
  \item \textbf{Row-vertex}: Estructura que se utiliza para representar
 la matriz de adyacencias. El apuntador a linked-list
 sirve para apuntar la estructura de nodos adyacentes
@@ -92,7 +92,7 @@ al vértice vertex. El apuntador a entero llamado
 color-around es una estructura que permite saber
 cuáles son los colores que el vértice vertex tiene
 en sus adyacencias.
- \item \textbf{Tuple}: Tupla que sirve para representar los vertices con su 
+ \item \textbf{Tuple}: Tupla que sirve para representar los vértices con su 
  grado en el arreglo ordenado por grados que pide DSTATUR.
  \item \textbf{Pair}: Pair es la estructura que retorna Dsatur.
 Clique representa la cota inferior de coloración.
@@ -110,25 +110,40 @@ de tipo \textbf{Linked-Array-list}. Es utilizada para guardar componentes en con
 grados de saturación sólo se actualizan para los vértices que no han sido coloreados, de esta manera se ahorra costo 
 de operaciones. El algoritmo recibe un argumento llamado start-point el cuál es -1 para indicar que se quiere hayar 
 la cota superior y recibe algún número mayor o igual que cero hasta el número de vértices del grafo cuando se quiere encontrar 
-la clique máxima (cota inferior). A éste algoritmo se le aplicó la optimización de 
+la clique máxima (cota inferior).
+Para encontrar la clique máxima el algoritmo cada vez que introduce un nuevo color incrementa la cota inferior. Si se repite algún color de los ya utilizados entonces no modificamos la cota inferior. Sin embargo, a partir de que se introduzca un nuevo color se verifica si el nuevo vértice coloreado hace clique con algunos de los vértices que ya 
+sabemos que pertenecen a una clique. Éste método de ampliación de cliques nos permite tener mejores cotas inferiores que 
+resultan ser muy útiles para el algoritmo de enumeración implícita cuando se aplica la optimización de no permutar 
+los elementos que se sabe pertenecen a la clique máxima encontrada por el algoritmo de Dsatur+Interchange.
+
+
 \begin{itemize}
  \item \textbf{get-max-degree}: función que en caso de ocurrir una igualdad en los números de saturación devuelve el próximo
 vértice no coloreado de grado mayor.
-\item \textbf{update-satur}: modifica estructuras de datos en vértices adyacentes a v(sub)i en el momento que se colorea un vértice v(sub)i todos los adyacentes a éste sufren un aumento 
+\item \textbf{update-satur}: modifica estructuras de datos en vértices adyacentes a v(sub)i. En el momento que se colorea un vértice v(sub)i todos los adyacentes a éste sufren un aumento 
 de saturación siempre que el color utilizado no sea el de uno adyacente a un adyacente de v(sub)i. Si el grado 
 de saturación de un elemento es -1 significa que dicho elemento ya fue coloreado. Por otro lado, se aprovecha de 
-colocar en 1 la casilla de corresponde al color utilizado por v(sub)i indicando que el existe un vértice en las adyacencias del vértice con un color dado.
+colocar en 1 la casilla de color-around que corresponde al color utilizado por v(sub)i.
  \item \textbf{leasp-color}: retorna el menor color posible. Dado un vértice v(sub)i que se quiere colorear se utiliza la estructura color-around. Sobre ésta se itera desde el principio hasta conseguir alguna casilla en 0 (indicando la ausencia del color i en la casilla).
 \item \textbf{repeated}: algoritmo que en caso de encontrar una repetición de grados de saturación devuelve el próximo vértice de grado mayor no coloreado.
 \end{itemize}
 \item \textbf{Degree}: prepara los vértices en una estructura vértice-grado llamada tupla, luego todos estos elementos se almacenan en un arreglo de tuplas llamado deg-vert.
 \item \textbf{Compare}: función de comparación utilzada por Quicksort.
- \item \textbf{Enumeración-Implícita}: este algoritmo prosigue tal como se enuncia en el proyecto. No tiene optimizaciones 
-  que pueda hacer más pequeño el umbral de soluciones. Sin embargo en un principio se ideó colocar la clique máxima 
-hayada por Brelaz+Interchange al principio del arreglo de vértices que se permutaría, de manera que los vértices 
-pertenecientes a dicha clique quedarían fijos y se permutaría el resto. En un momento dado cuando se colorea la parte 
-permutada del arreglo si se detecta una secuencia de coloraciones distintas, se chequea si esa secuencia de vértices forman un clique entre sí. En caso de ser así, se comprobaría que el número de tales vértices es mayor que la cota inferior hasta ahora registrada, en cuyo caso se actualizaría dicha cota. Por otro lado si los vértices que conforman la secuencia de coloraciones distintas están todos conectados entre sí por un arco directo y éstos a su vez se conectan con otro arco directo a los vértices fijos del arreglo entonces podemos agregarlos a la parte fija del arreglo.
-\item \textbf{twoOnN}: algoritmo que cálcula la combinatoria de 2 elementos en número colores.
+ \item \textbf{Enumeración-Implícita}: este algoritmo prosigue tal como se enuncia en el proyecto. Sin embargo se le agregó la optimización de fijar los elementos que pertenecen a la clique máxima encontrada por Brelaz+Interchange teniendo que permutar sólo los elementos que no pertenecen a dicha clique reduciendo así el umbral de soluciones.
+Otra optimización que se consideró utilizar pero no se llegó implementar consiste en tratar de seguir ampliando 
+la clique que tenemos fija. Cómo sabemos que encontrar la clique máxima de un grafo es un problema NP, no podemos 
+esperar que Brelaz+Interchange nos dé la clique máxima. Sin embargo mientras consideramos todas las permutaciones sí existe la posibilidad de encontrar la clique máxima. Para ampliar el arreglo de elementos fijos es necesario entonces hacer una verificación similar a la que hicimos en Brelaz+Interchange para ampliar la clique, es decir,en una permutación 
+cualquiera, cada vez que se introduce un nuevo color se puede verificar si el vértice coloreado hace clique con los elementos que no permutamos. Ésta optimización permite seguir podando el árbol de permutaciones.
+\begin{itemize}
+\item \textbf{update-color-around}: función que actualiza el arreglo color-around que indica a un vértice v(sub)i cuáles son 
+los colores que tiene a su alrededor.
+\item \textbf{get-vertices}: función que retorna un arreglo de vértices en el que se tiene en las primeras j casillas los vértices que conforman la clique máxima encontrada por Brelaz+Interchange. Luego en las N-j casillas restantes se tiene el resto de los elementos que serán permutados por implicit-enum.
+\item \textbf{move-vertex}: función auxiliar a get-vertices que permite mover los vértices de una clique máxima al principio del arreglo vértices.
+\item \textbf{color-fixed}: función que colorea los elementos fijos del algoritmo de enumeración implícita.
+\item \textbf{check-perm}: dado que nuestro algoritmo para encontrar permutaciones es iterativo, es necesario un mecanismo que permita saber si hemos alcanzado la última permutación posible para un arreglo dado. Esta verificación es importante porque de lo contrario la implementación del algoritmo de Dijkstra se hace inestable.
+\end{itemize}
+
+\item \textbf{twoOnN}: algoritmo que cálcula la combinatoria de 2 elementos en número de colores utilizados.
 \item \textbf{interchange}: se calculan las componentes por medio de un DFS en los nodos. Se verifica la condición de intercambio 
 y se hace el intercambio en caso de proceder.
 \end{itemize}
@@ -171,7 +186,8 @@ Para el cálculo de las combinaciones de colores ideamos un algoritmo que solo f
 El algoritmo se basa en el hecho de que, una vez que se combina un elemento con todos los demás elementos de su conjunto, se puede dejar de considerar ese elemento en las combinaciones posteriores, y se puede operar recursivamente sobre lo que sobra del conjunto.
 
 \subsubsection{Enumeración Implícita}
-El problema más grande fue calcular las permutaciones, queríamos un algoritmo iterativo y no recursivo para el resolver el problema, así que usamos el algoritmo de Dijkstra, el cual para una permutación genera la próxima permutación en orden lexicográfico.
+Un problema importante fue calcular las permutaciones, queríamos un algoritmo iterativo y no recursivo para el resolver el problema, así que usamos el algoritmo de Dijkstra, el cual para una permutación genera la próxima permutación en orden lexicográfico.
+En cuanto al flujo del algoritmo de enumeración implícita se le agregó la optimización de sólo permutar los elementos que no pertenecen a la clique máxima encontrada por Brelaz+Interchange.
 \newpage
 \section{Instrucciones de Operación}
 
@@ -183,9 +199,9 @@ El código fuente se puede conseguir en el archivo tar.gz que viene con éste in
 \subsection{¿Cómo descomprimir el archivo tar.gz?}
 En una cónsola de linux se debe ejecutar el siguiente comando:
 \begin{verbatim}
- tar -vzxf proyecto1-Fundaro-Jaber.tar.gz
+ tar -vzxf Grupo6.tar.gz
 \end{verbatim}
-A continuación se crea una carpeta llamada proyecto1 dónde se encuentran los archivos fuentes del proyecto.
+A continuación se crea una carpeta llamada Grupo6 dónde se encuentran los archivos fuentes del proyecto.
 
 \subsection{¿Cómo compilar?}
 En una cónsola de linux debe dirigirse a la carpeta donde estan los archivos fuentes, desde allí se deberá ejecutar
@@ -200,11 +216,11 @@ Con esto se compilan todas las fuentes. En caso de querer borrar los archivos ge
 
 \subsection{¿Cómo ejecutar?}
 En la carpeta de archivos fuentes se provee de un script llamado script.sh. Si se quieren ejecutar todas las instancias 
-en el comando debe ser el siguiente:
+el comando debe ser el siguiente:
 \begin{verbatim}
  ./script.sh resultado
 \end{verbatim}
-donde resultado es el nombre del archivo donde arrojarán los resultados de la corrida. Si se quiere, éste archivo puede recibir cualquier nombre diferente a resultado.
+donde resultado es el nombre del archivo donde se escribirán los resultados de la corrida. Si se quiere, éste archivo puede recibir cualquier nombre diferente a resultado.
 Si se quiere ejecutar una instancia particular se procede con el siguiente comando:
 \begin{verbatim}
  ./main < grafos/instancia-particular
@@ -236,11 +252,10 @@ no se ejecuta.
 
 \section{Estado Actual}
 \subsection{Indicación del estado final de la aplicación}
-El proyecto se encuentra funcional para la mayoría de las instancias excepto para una que se menciona más abajo en la 
-sección de errores. Con la mayoría de las instancias el algoritmo funciona y cuando es posible (a menos que exceda 5 min.) devuelve el número cromático de una instancia dada.
+El proyecto funciona correctamente para todas las instancias. La optimización de fijar los elementos pertenecientes a la clique máxima de Brelaz+Interchange hace que sólo 6 instancias excedan los 5 minutos. 
 \subsection{Errores}
-La aplicación falla en la instancia 10-0,7-10.col. No se pudo averiguar la razón de dicha falla.
-
+Problemas al liberar memoria en el algoritmo de Enumeración Implícita.
+\newpage
 \section{Otros}
 \subsection{Demostración formal de Enumeración Implícita}
 Supongamos que G es un grafo cualquiera y que su número cromático es N.
@@ -260,14 +275,14 @@ Si existiera una clique o parte de una clique al principio de las permutaciones 
 Si se corre el proyecto para la instancia 12-0,5-3.col la coloración que resulta de aplicar Brelaz+Interchange 
 es 5. Sin embargo aplicando el algoritmo de enumeración implícita se puede notar que la coloración mínima del grafo
 es de 4 colores.
-
+\newpage
 \subsection{Tabla de resultados}
 \newpage
 
 \section{Conclusiones y recomendaciones}
 El algoritmo de Dsatur-Interchange es útil para dar unas cotas de referencia al algoritmo de enumeración implícita. Sin 
 embargo el algoritmo de enumeración implícita tarda una cantidad considerable de tiempo si no se aplica ningún tipo de optimizaciones que logren 
-reducir el umbral de las soluciones. Se recomienda seguir las recomendaciones planteadas en la sección de Algoritmos involucrados donde se describe en el punto de enumeración implícita una manera de podar el árbol de soluciones.
+reducir el umbral de las soluciones. Se recomienda seguir las recomendaciones planteadas en la sección de Algoritmos involucrados donde se describe en el punto de enumeración implícita unas mejoras para podar el árbol de soluciones.
 
 \section{Referencias Bibliográficas}
 \begin{itemize}
