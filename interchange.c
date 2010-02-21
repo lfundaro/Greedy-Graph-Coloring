@@ -39,7 +39,7 @@ int get_nxt_neighbour(int last_neighbour,int* neighbours,int n_of_neighbours,lin
     aux = components;
     //Recorro las componentes
     while (aux!=NULL){
-      //Si en el vecino actual pertenece a la componente,
+      //Si el vecino actual pertenece a la componente,
       //hago i=2 y reviso el proximo vecino.
       if ((aux->array)[neighbours[next_neighbour]]==1) {
         i=2;
