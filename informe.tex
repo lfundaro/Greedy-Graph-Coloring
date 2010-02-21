@@ -60,7 +60,7 @@ El problema se aborda con ayuda de la combinación los algoritmos
 Brelaz+Interchange y Enumeración Implícita. El primer algoritmo es 
 usado para encontrar las cotas tanto superior como inferior con las que 
 el algoritmo de Enumeración Implícita puede encontrar una solución optimal
-al problema de coloración mínima.
+al problema de coloración mínima. 
 
 \subsection{Descripción del contenido del informe}
 En este informe se explica el concepto de diseño que se utilizó
@@ -77,7 +77,7 @@ un color, y un arreglo que llamamos color-around. Se decidió utilizar un arregl
 constante a sus elementos. Para las adyacencias no se usó un arreglo ya que cada vez que se requiere saber los 
 adyancetes a un vértice dado siempre es necesario recorrer la estructura que se implemente de forma lineal, por lo que 
 una lista enlazada se perfilaba como la mejor opción ya que no desperdiciaría espacio, mientras que una matriz nxn 
-hubiese gastado espacio que nunca sería utilizado en caso de tener un grafo poco denso.
+hubiese gastado espacio que nunca sería utilizado en caso de tener un grafo poco denso. 
 
 \subsection{Estructuras de datos y algoritmos involucrados en la aplicación}
 
@@ -109,8 +109,8 @@ de tipo \textbf{Linked-Array-list}. Es utilizada para guardar componentes en con
  \item \textbf{Dsatur+interchange}: para el ordenamiento decreciente de los vértices se utilizó el Algoritmo Quicksort. Los 
 grados de saturación sólo se actualizan para los vértices que no han sido coloreados, de esta manera se ahorra costo 
 de operaciones. El algoritmo recibe un argumento llamado start-point el cuál es -1 para indicar que se quiere hayar 
-la cota superior y algún número mayor o igual que cero hasta el número de vértices del grafo cuando se quiere encontrar 
-la clique máxima (cota inferior). 
+la cota superior y recibe algún número mayor o igual que cero hasta el número de vértices del grafo cuando se quiere encontrar 
+la clique máxima (cota inferior). A éste algoritmo se le aplicó la optimización de 
 \begin{itemize}
  \item \textbf{get-max-degree}: función que en caso de ocurrir una igualdad en los números de saturación devuelve el próximo
 vértice no coloreado de grado mayor.
