@@ -76,7 +76,6 @@ int * implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bou
   } 
 
   free(fixed);
-  free(color_count);
   int * solution = (int *) malloc(sizeof(int));
   *solution = upper_bound;
   return solution;
