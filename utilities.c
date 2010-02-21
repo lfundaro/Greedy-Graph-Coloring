@@ -11,9 +11,9 @@ int list_length(linked_list* list){
   return len;
 }
 
-void initialize(int* array,int N){
+void initialize(int* array,int N) {
   int i;
-  for(i=0;i<N;i++){
+  for(i=0;i<N;i++) {
     array[i]=0;
   }
 }
@@ -28,21 +28,22 @@ void main_col_init(struct row_vertex * main_col, int vertex_num) {
   }
 }
 
-/* void append(linked_list * x, int vertex) { */
-/*   linked_list * y = malloc(sizeof(linked_list)); */
-/*   y->vertex = vertex; */
-/*   y->next = x; */
-/*   x = y; */
-/* } */
-
-/* void free_linked_list(linked_list * x) { */
-/*   linked_list * forward = x->next;; */
-/*   linked_list * back = x; */
-/*   while(forward != NULL) { */
-/*     free(back); */
-    
-    
-/*   } */
-/* } */
-
+//Función que libera de memoria la estructura del grafo
+void free_row_vertex(struct row_vertex * main_col, int vertex_num) {
+  int i;
+  linked_list * back;
+  linked_list * forward;
+  //Se liberan los arreglos color_around
+  //y las listas enlazadas de adyacencias
+  for(i = 0; i < vertex_num; i++) {
+    free(main_col[i].color_around);
+    back = main_col[i].pt;
+    forward = back;
+    while(forward != NULL) {
+      forward = back->next;
+      free(back);
+      back = forward;
+    }
+  }
+}
 

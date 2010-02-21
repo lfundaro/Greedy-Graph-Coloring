@@ -11,11 +11,11 @@ int main(void)
   char * line = NULL;
   size_t len = 0;
   ssize_t read;
-  regex_t * __restrict compiled_edge = malloc(sizeof (regex_t));
-  regcomp(compiled_edge,"^e (.) (.)", REG_EXTENDED);   // Compilacion de RegEx para vertices  
-  regex_t * __restrict compiled_num = malloc(sizeof (regex_t)); 
-  regcomp(compiled_num, "^p", REG_EXTENDED);   //  Compilacion de RegEx para numero de vertices
-  char * dump = malloc(sizeof(char)*12);
+  regex_t * __restrict compiled_edge = (regex_t *) malloc(sizeof (regex_t));
+  (void) regcomp(compiled_edge,"^e (.) (.)", REG_EXTENDED);   // Compilacion de RegEx para vertices  
+  regex_t * __restrict compiled_num = (regex_t *) malloc(sizeof (regex_t)); 
+  (void) regcomp(compiled_num, "^p", REG_EXTENDED);   //  Compilacion de RegEx para numero de vertices
+  char * dump = (char *) malloc(sizeof(char)*12);
   int d1;  
   int d2;
   int vertex_num;
@@ -34,7 +34,7 @@ int main(void)
     main_col[i].pt = NULL;
     main_col[i].vertex = i; 
     main_col[i].color = -1; // Color inicial
-    main_col[i].color_around = malloc(sizeof(int)*vertex_num); 
+    main_col[i].color_around = (int *) malloc(sizeof(int)*vertex_num); 
     int j;
     for(j = 0; j < vertex_num; j++) 
       // Inicialización de arreglo de colores adyacentes
@@ -49,7 +49,7 @@ int main(void)
       d2 -= 1;
       if (d1 != d2) {
         // Arco d1 --> d2
-        linked_list * adjacent1 = malloc(sizeof(linked_list)); 
+        linked_list * adjacent1 = (linked_list *) malloc(sizeof(linked_list)); 
         adjacent1->vertex = d2;
         // Insercion de elementos de lista por la izquierda
         adjacent1->next = main_col[d1].pt;
@@ -88,7 +88,8 @@ int main(void)
   int k;
   int j;
   // miembros tentativos
-  int * members = malloc(sizeof(int) * vertex_num);
+  int * members;
+  int * cromatic_num = NULL; //Número cromático
   for(i = 0; i < vertex_num; i++) {
     main_col_init(main_col, vertex_num);
     result = dsatur(main_col, deg_vert, vertex_num, i);
@@ -99,22 +100,25 @@ int main(void)
     }
     free(result.members);
   }
+
   printf("Resultados de Brelaz+interchange \n");
   printf("Cota superior = %d \n", upper_bound);
   printf("Cota inferior = %d \n", lower_bound);
   if (lower_bound == upper_bound)
     printf("Número cromático = %d \n", upper_bound);
   else {
-    int * vertices = malloc(sizeof(int) * vertex_num);
-    for(i = 0; i < vertex_num; i++) 
-      vertices[i] = i;
-    int cromatic_num; //Número cromático
-    cromatic_num = implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num);
+    int * vertices;
+    vertices = get_vertices(members, vertex_num);
+    free(members);
+    cromatic_num = (int *) implicit_enum(main_col, lower_bound, upper_bound, vertices, vertex_num);
     printf("Resultado de enumeración implícita \n");
-    printf("Número cromático = %d \n", cromatic_num);
+    printf("Número cromático = %d \n", *cromatic_num);
+    free(cromatic_num);
+    free(vertices);
   }
-  // TERMINA ALGORITMO
 
+  // TERMINA ALGORITMO
+  
   if (!gettimeofday(&t_p, NULL))
     TIEMPOFINAL =  (double) t_p.tv_sec + ((double) t_p.tv_usec)/1000000.0;
   else
@@ -122,10 +126,12 @@ int main(void)
   
   printf("Tiempo en segundos de ejecución del programa: %1.4f \n", (TIEMPOINICIAL - TIEMPOFINAL)*-1);
 
+  free_row_vertex(main_col, vertex_num);
   free(dump);
   free(compiled_num);
   free(compiled_edge);
   free(line);
+  free(deg_vert);
   return EXIT_SUCCESS;
 }
 

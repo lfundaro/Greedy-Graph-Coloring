@@ -18,7 +18,7 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
     used_colors[i] = 0;   
   int v_i;
   // Arreglo de grados de saturación
-  int * satur_degree = malloc(sizeof(int)*vertex_num);
+  int * satur_degree = (int *) malloc(sizeof(int)*vertex_num);
   // Inicialización de estructura de grados de saturación
   for(i = 0; i < vertex_num; i++) 
     satur_degree[i] = 0;
@@ -38,7 +38,7 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
   used_colors[last_color] = 1;  //Color se marca como usado
   lower_bound++;
   num_colored++;
-  int * members = malloc(sizeof(int) * vertex_num);
+  int * members = (int *) malloc(sizeof(int) * vertex_num);
   initialize(members, vertex_num);
   members[v_i] = 1;
   // El grado de saturación de un vértice coloreado ya no nos 
@@ -46,10 +46,10 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
   satur_degree[v_i] = -1;  
   // Actualizar saturación de vecinos
   update_satur(main_col, satur_degree, v_i, last_color);
+
   // Pasos 3, 4, 5 de DSATUR, agregando intercambio
   int max; //Lleva la máxima saturación
   int found; //Dice dónde se encontró vértice de máx. saturación
-
   while (num_colored < vertex_num) {
     max = -1; //Elemento neutro de saturación;
     for(i = 0; i < vertex_num; i++) {
@@ -97,18 +97,23 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
     }
 
     if (used_colors[last_color] == 0) { //Coloración de clique
-      lower_bound++;
-      members[v_i] = 1;
-    }
-    else {
-      if (start_point != -1) { //Hacemos retornar el algoritmo
-        pair early_result;
-        early_result.clique = lower_bound;
-        early_result.members = members;
-        return early_result;
+      if (makes_clique(main_col, v_i, members, vertex_num)) {
+        members[v_i] = 1;
+        lower_bound++;
       }
     }
-    //Se marca el color usado como usado
+    else {
+      if (start_point != -1) {
+        //Verificamos si v_i hace clique con los vértices que 
+        //ya conocemos hacen clique
+        if (makes_clique(main_col, v_i, members, vertex_num)) {
+          lower_bound++;
+          members[v_i] = 1;
+        }
+      }
+    }
+    //Se marca el color usado como usado solo cuando 
+    //corremos DSATUR para encontrar 
     used_colors[last_color] = 1;
     //Grado de saturación en -1 porque no nos interesa 
     //actualizar tal grado para un vértice ya coloreado
@@ -116,14 +121,29 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
     //Se actualiza el arreglo color_around de los vértices
     //adyacentes a v_i
     update_satur(main_col, satur_degree, v_i, last_color);
+    //Si estamos buscando la máxima clique entonces 
+    //a los vértices adyacentes a v_i le quitamos el color
+    //"last_color" en su arreglo de colores adyacentes
+    /* if (start_point != -1 && poss_member)  */
+    /*   uncolor(main_col, v_i, last_color); */
+    
     num_colored++; 
-  } 
+  }
+  
+  if (start_point != -1) { //Hacemos retornar el algoritmo
+    pair early_result;
+    early_result.clique = lower_bound;
+    early_result.members = members;
+    return early_result;
+  }
+  
   
   for(i = 0; i < vertex_num; i++){
     if (used_colors[i] == 1)
       upper_bound++;  //Se cuenta número de colores usados
   }
   free(members);
+  free(satur_degree);
   pair result;
   result.clique = lower_bound;
   result.coloring = upper_bound;
@@ -192,4 +212,40 @@ int leastp_color(struct row_vertex * main_col,int v_i,int vertex_num) {
       return i;
   }
 }
+
+//Función que descolorea un vértice para detectar 
+//más fácilmente una clique máxima
+void uncolor(struct row_vertex * main_col, int v_i, int color) {
+  linked_list * aux;
+  aux = main_col[v_i].pt;
+  while(aux != NULL) {
+    main_col[aux->vertex].color_around[color] = 0;
+    aux = aux->next;
+  }
+}
+
+int makes_clique(struct row_vertex * main_col, int v_i, int * members, int vertex_num) {
+  int i;
+  linked_list * aux;
+  int is_there = 0;
+  int decision = 1;
+  for(i = 0; i < vertex_num; i++) {
+    is_there = 0;
+    if (members[i] == 1) {
+      aux = main_col[v_i].pt;
+      while (aux != NULL) {
+        if (aux->vertex == i) {
+          is_there = 1;
+          break;
+        }
+        aux = aux->next;
+      }
+      decision = decision & is_there;
+    }
+  }
+  return decision;
+}
+
+
+
 
