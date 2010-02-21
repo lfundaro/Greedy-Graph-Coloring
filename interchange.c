@@ -1,9 +1,9 @@
 #include "main.h"
 
 /*Funcion que recorre con DFS los nodos coloreados con colors[0] o colors[1]
-y que son alcanzables desde el nodo neighbour.*/
+  y que son alcanzables desde el nodo neighbour.*/
 /*La funcion guarda los nodos alcanzados en el conjunto vectorial control_set,
-el cual se pasa por referencia.*/
+  el cual se pasa por referencia.*/
 void dfs(int neighbour, int* colors, row_vertex graph[],int* control_set){
   linked_list* aux = graph[neighbour].pt; //Lista con los nodos adyacentes a neighbour
   int vertex;
@@ -17,8 +17,8 @@ void dfs(int neighbour, int* colors, row_vertex graph[],int* control_set){
     //Chequeo que no halla visitado al adyacente actual
     //y que tenga un color que me interese.
     if (! control_set[vertex]&&
-	 (colors[0]==graph[vertex].color||
-          colors[1]==graph[vertex].color) ){
+        (colors[0]==graph[vertex].color||
+         colors[1]==graph[vertex].color) ){
       dfs(vertex,colors,graph,control_set);
     }
     aux=aux->next;
@@ -27,13 +27,13 @@ void dfs(int neighbour, int* colors, row_vertex graph[],int* control_set){
 
 
 /*Funcion que calcula el proximo vecino a partir del cual se aplicara DFS*/
-  //--Se asegura de que el vecino no halla sido alcanzado por un DFS anterior,
-  //es decir, que no pertenesca a una componente ya explorara.
+//--Se asegura de que el vecino no halla sido alcanzado por un DFS anterior,
+//es decir, que no pertenesca a una componente ya explorara.
 int get_nxt_neighbour(int last_neighbour,int* neighbours,int n_of_neighbours,linked_array_list* components){
 
   int i=1;//i sera 1 mientras no consiga un proximo vecino
   linked_array_list* aux;//Recorrera las componentes
-  int next_neighbour=last_neighbour++;
+  int next_neighbour = ++last_neighbour;
 
   while (i==1&&next_neighbour<n_of_neighbours){
     aux = components;
@@ -41,14 +41,13 @@ int get_nxt_neighbour(int last_neighbour,int* neighbours,int n_of_neighbours,lin
     while (aux!=NULL){
       //Si el vecino actual pertenece a la componente,
       //hago i=2 y reviso el proximo vecino.
-      if ((aux->array)[neighbours[next_neighbour]]==1){
-	i=2;
+      if ((aux->array)[neighbours[next_neighbour]]==1) {
+        i=2;
         next_neighbour++;
         break;
       }
-      else{
-	aux=aux->next;
-      }
+      else
+        aux=aux->next;
     }
     //Si i==1, termina el ciclo en la siguiente iteracion.
     //Si i==2, revisa el siguiente vecino.
@@ -61,10 +60,10 @@ int get_nxt_neighbour(int last_neighbour,int* neighbours,int n_of_neighbours,lin
 
 
 /*Funcion que revisa la validez y utilidad del grafo inducido por intercambio*/
-  //--Se asegura de que el nodo sobre el cual se hace el intercambio no sea 
-  //adyacente a dos nodos de distinto color y de la misma componente (Validez).
-  //--Se asegura de que existan al menos dos componentes a las cuales el nodo esta
-  //conectado por nodos de colores distintos (Utilidad).
+//--Se asegura de que el nodo sobre el cual se hace el intercambio no sea 
+//adyacente a dos nodos de distinto color y de la misma componente (Validez).
+//--Se asegura de que existan al menos dos componentes a las cuales el nodo esta
+//conectado por nodos de colores distintos (Utilidad).
 int check_subgraph(int* neighbours,int n_of_neighbours,linked_array_list* components){
   int validity = 0; //Contador para chequear la validez del intercambio
   linked_array_list* aux = components;
@@ -77,7 +76,7 @@ int check_subgraph(int* neighbours,int n_of_neighbours,linked_array_list* compon
     //de la componente actual.
     while (j<n_of_neighbours){
       if ((aux->array)[neighbours[j]]==1)
-	validity++;
+        validity++;
       j++;
     }
     //Si hay al menos dos vecinos que son parte
@@ -92,8 +91,8 @@ int check_subgraph(int* neighbours,int n_of_neighbours,linked_array_list* compon
 
   /*CHEQUEO DE UTILIDAD*/
   /*Tomo el primer color. Si mas adelante
-  encuentro al menos uno diferente, el
-  intercambio para este nodo es util*/
+    encuentro al menos uno diferente, el
+    intercambio para este nodo es util*/
   aux=components;
   j=aux->color;
   aux=aux->next;
@@ -108,8 +107,8 @@ int check_subgraph(int* neighbours,int n_of_neighbours,linked_array_list* compon
 
 
 /*Funcion que actualiza los grados de saturacion y arreglos de colores adyacentes
-del la estructura que representa el grafo cuando intercambio cambia el color de
-un nodo.*/
+  del la estructura que representa el grafo cuando intercambio cambia el color de
+  un nodo.*/
 void update_saturation(int vertex, int new_color,int old_color,row_vertex graph[],int* satur_degree){
 
   linked_list* aux=graph[vertex].pt; //Lista de nodos adyacentes al nodo recoloreado
@@ -132,8 +131,8 @@ void update_saturation(int vertex, int new_color,int old_color,row_vertex graph[
     graph[v].color_around[new_color]+=1;
 
     /*Si despues de descontar el viejo color al vecino
-    no le restan vecinos adyacentes de ese color,
-    disminuyo su saturacion.*/
+      no le restan vecinos adyacentes de ese color,
+      disminuyo su saturacion.*/
     graph[v].color_around[old_color]-=1;
     if (graph[v].color_around[old_color]==0)
       satur_degree[v]-=1;
@@ -154,9 +153,9 @@ void del_array_list(linked_array_list* al){
 
 
 /*Funcion que recolorea las componentes de necesarias
-para realizar el intercambio.*/
-  //satur_degree es un arreglo de N que registra las
-  //saturaciones de todos los nodos
+  para realizar el intercambio.*/
+//satur_degree es un arreglo de N que registra las
+//saturaciones de todos los nodos
 void interch(int min_col,int max_col,int vertex,linked_array_list* components,row_vertex graph[],int vertex_num,int* satur_degree){
   int i=0;
   linked_array_list* aux = components;
@@ -166,21 +165,21 @@ void interch(int min_col,int max_col,int vertex,linked_array_list* components,ro
     if(aux->color==min_col)
       //Recorro la componente
       while (i<vertex_num){
-  	if ((aux->array)[i]==1)
+        if ((aux->array)[i]==1)
 
-	  /*Si el nodo de la componente tiene
-	  min_col, le pongo max_col y actualizo
-	  la saturacion. Viceversa para el caso
-	  contrario*/
-  	  if (graph[i].color==min_col){
-  	    graph[i].color=max_col;
-  	    update_saturation(i,max_col,min_col,graph,satur_degree);
-  	  }
-  	  else{
-  	    graph[i].color=min_col;
-  	    update_saturation(i,min_col,max_col,graph,satur_degree);
-  	  }
-  	i++;//Proximo nodo a considerar
+          /*Si el nodo de la componente tiene
+            min_col, le pongo max_col y actualizo
+            la saturacion. Viceversa para el caso
+            contrario*/
+          if (graph[i].color==min_col){
+            graph[i].color=max_col;
+            update_saturation(i,max_col,min_col,graph,satur_degree);
+          }
+          else{
+            graph[i].color=min_col;
+            update_saturation(i,min_col,max_col,graph,satur_degree);
+          }
+        i++;//Proximo nodo a considerar
       }
     i=0;
     aux=aux->next;//Siguiente componente
@@ -188,9 +187,9 @@ void interch(int min_col,int max_col,int vertex,linked_array_list* components,ro
 }
 
 /*Funcion principal de intercambio*/
-  //--Revisa si para un vertice dado existe un intercambio util*/
-  //--Devuelve el grafo con las componentes necesarias intercambiadas. 
-  //--No colorea el nodo sobre el cual se hizo el intercambio.
+//--Revisa si para un vertice dado existe un intercambio util*/
+//--Devuelve el grafo con las componentes necesarias intercambiadas. 
+//--No colorea el nodo sobre el cual se hizo el intercambio.
 row_vertex* interchange(row_vertex graph[],int* satur_degree,int vertex, int high_color, int vertex_num){
   //Estructuras para determinar los colores y nodos adyacentes
   int* color_set = (int*)malloc((high_color+1) * sizeof (int));//Conjunto vectorial de colores adyacentes
@@ -219,7 +218,7 @@ row_vertex* interchange(row_vertex graph[],int* satur_degree,int vertex, int hig
   initialize(color_set,high_color+1);
 
   /*Calculo de colores y nodos adyacentes
-  Los colores quedan guardados en un conjunto vectorial*/
+    Los colores quedan guardados en un conjunto vectorial*/
   i=0;
   //Recorro los vecinos
   while (aux != NULL){
@@ -278,19 +277,19 @@ row_vertex* interchange(row_vertex graph[],int* satur_degree,int vertex, int hig
     //Mientras tenga vecinos que no he alcanzado
     while(j<n_of_neighbours){
       if (graph[neighbours[j]].color==pair[0]||
-	  graph[neighbours[j]].color==pair[1]){
+          graph[neighbours[j]].color==pair[1]){
 
-	//Creo una nueva componente al final de la lista
-	tail->next=(linked_array_list*)malloc(sizeof (linked_array_list));
-	tail=tail->next;
-	tail->color=graph[neighbours[j]].color;
-	control_set=(int*)malloc(vertex_num * sizeof (int));
-	initialize(control_set,vertex_num);
-	tail->array=control_set;
-	tail->next=NULL;
+        //Creo una nueva componente al final de la lista
+        tail->next=(linked_array_list*)malloc(sizeof (linked_array_list));
+        tail=tail->next;
+        tail->color=graph[neighbours[j]].color;
+        control_set=(int*)malloc(vertex_num * sizeof (int));
+        initialize(control_set,vertex_num);
+        tail->array=control_set;
+        tail->next=NULL;
 
-	//Calculo los nodos alcanzables desde este vecino
-	dfs(neighbours[j],pair,graph,control_set);
+        //Calculo los nodos alcanzables desde este vecino
+        dfs(neighbours[j],pair,graph,control_set);
       }
       //Calculo el proximo vecino que no he alcanzado
       j=get_nxt_neighbour(j,neighbours,n_of_neighbours,components);
@@ -303,9 +302,9 @@ row_vertex* interchange(row_vertex graph[],int* satur_degree,int vertex, int hig
 
       //Hago intercambio para colorear con el menor color posible.
       if (pair[0]<pair[1])
-	interch(pair[0],pair[1],vertex,components,graph,vertex_num,satur_degree);
+        interch(pair[0],pair[1],vertex,components,graph,vertex_num,satur_degree);
       else
-	interch(pair[1],pair[0],vertex,components,graph,vertex_num,satur_degree);
+        interch(pair[1],pair[0],vertex,components,graph,vertex_num,satur_degree);
 
       del_array_list(components);
       free(pair);

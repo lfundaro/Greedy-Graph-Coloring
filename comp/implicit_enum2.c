@@ -1,7 +1,7 @@
 # include "main.h"
-
+ 
 // Algoritmo de enumeración implícita
-
+ 
 int * implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bound, int * vertices, int vertex_num) {
   int i;
   int used_colors[vertex_num];
@@ -21,10 +21,10 @@ int * implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bou
   //Inicializar permuta
   for(i = 0; i < leftover; i++) 
     permuta[i] = vertices[fixed_s + i];
-
+ 
   int stop = 0;
   while(!stop) {
-
+ 
     //Inicialización de estructura de adyacencias y colores usados
     main_col_init(main_col, vertex_num); 
     initialize(used_colors, vertex_num);
@@ -74,13 +74,14 @@ int * implicit_enum(struct row_vertex * main_col, int lower_bound, int upper_bou
     //Próxima permutación
     next_perm(permuta, leftover);
   } 
-
+ 
   free(fixed);
+  free(color_count);
   int * solution = (int *) malloc(sizeof(int));
   *solution = upper_bound;
   return solution;
 }
-
+ 
 // Función que actualiza los el arreglo color_around de los vértices
 // adyacentes al vértice v_i que se ha coloreado
 void update_color_around(struct row_vertex * main_col, int v_i, int color) {
@@ -95,8 +96,8 @@ void update_color_around(struct row_vertex * main_col, int v_i, int color) {
     forward = forward->next;  
   }
 }
-
-
+ 
+ 
 //Función que retorna un arreglo de vértices
 //el cual contiene en las primeras casillas 
 //los miembros de la clique máxima encontrada 
@@ -114,7 +115,7 @@ int * get_vertices(int * members, int vertex_num) {
   }
   return vertices;
 }
-
+ 
 //Función que se utiliza para mover los vértices 
 //pertenecientes a la clique encontrada por 
 //Brelaz-Interchange al principio del arreglo de 
@@ -128,7 +129,7 @@ void move_vertex(int * vertices, int vertex_num, int pos) {
     vertices[i - 1] = aux;
   }
 }
-
+ 
 //Coloración de arreglo fijo
 void color_fixed(int * fixed, struct row_vertex * main_col, int lower_bound, int * used_colors, int * color_count) {
   int i;
@@ -142,11 +143,7 @@ void color_fixed(int * fixed, struct row_vertex * main_col, int lower_bound, int
     update_color_around(main_col, fixed[i], i);
   }
 }
-
-//Permite saber si nos encotramos en la última de las
-//permutaciones que hace Dijkstra. Este cheque es importante 
-//porque si Dijsktra comienza a repetir permutaciones el 
-//algoritmo se hace inestable.
+ 
 int check_perm(int * permuta, int leftover) {
   int i;
   int decision = 1;
@@ -160,7 +157,3 @@ int check_perm(int * permuta, int leftover) {
   }
   return decision;
 }
-
-
-
-

@@ -18,7 +18,7 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
     used_colors[i] = 0;   
   int v_i;
   // Arreglo de grados de saturación
-  int * satur_degree = malloc(sizeof(int)*vertex_num);
+  int * satur_degree = (int *) malloc(sizeof(int)*vertex_num);
   // Inicialización de estructura de grados de saturación
   for(i = 0; i < vertex_num; i++) 
     satur_degree[i] = 0;
@@ -38,7 +38,7 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
   used_colors[last_color] = 1;  //Color se marca como usado
   lower_bound++;
   num_colored++;
-  int * members = malloc(sizeof(int) * vertex_num);
+  int * members = (int *) malloc(sizeof(int) * vertex_num);
   initialize(members, vertex_num);
   members[v_i] = 1;
   // El grado de saturación de un vértice coloreado ya no nos 
@@ -143,6 +143,7 @@ pair dsatur(row_vertex main_col[], tuple deg_vert[], int vertex_num, int start_p
       upper_bound++;  //Se cuenta número de colores usados
   }
   free(members);
+  free(satur_degree);
   pair result;
   result.clique = lower_bound;
   result.coloring = upper_bound;

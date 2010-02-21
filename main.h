@@ -108,3 +108,4 @@ void uncolor(struct row_vertex *, int, int);
 
 int makes_clique(struct row_vertex *, int, int *, int);
 
+void free_row_vertex(struct row_vertex *, int);
